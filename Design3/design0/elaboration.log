@@ -1,0 +1,16 @@
+elbread.dll ver. 1.0.5.365 Fri Apr 18 20:41:56 2025
+
+
+-------------------------------------------------
+Entity                   | Architecture | Library
+-------------------------------------------------
+instruction_register_tb  | behavior     | design0
+instruction_register     | behavioral   | design0
+-------------------------------------------------
+
+-------------------------
+Package         | Library
+-------------------------
+standard        | std
+std_logic_1164  | ieee
+-------------------------
