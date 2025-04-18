@@ -1,6 +1,0 @@
-i<>.\src\pc.vhd
-i<>.\src\ProgramCounter_tb.vhd
-i<>.\src\Instruction_register.vhd
-i<>.\src\Instruction_register_tb.vhd
-i<>.\src\Memory.vhd
-i<>.\src\Memory_tb.vhd
