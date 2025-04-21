@@ -11,7 +11,7 @@ entity Instruction_register is
 end entity ;
 
 architecture behavioral of Instruction_register is
-	signal ir : STD_LOGIC_VECTOR (31 downto 0);
+	signal ir : std_logic_vector (31 downto 0);
 begin
 	
 	process(clk)

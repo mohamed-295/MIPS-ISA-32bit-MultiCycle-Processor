@@ -19,7 +19,7 @@ architecture behavior of Memory_tb is
 
 begin
 
-    DUT: entity work.Memory
+    DUT: entity Memory
         port map (
             clk        => clk_tb,
             reset      => reset_tb,

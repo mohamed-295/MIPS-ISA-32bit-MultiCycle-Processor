@@ -4,3 +4,7 @@ i<>.\src\Instruction_register.vhd
 i<>.\src\Instruction_register_tb.vhd
 i<>.\src\Memory.vhd
 i<>.\src\Memory_tb.vhd
+i<>.\src\MDR.vhd
+i<>.\src\MDR_tb.vhd
+i<>.\src\Register_file.vhd
+i<>.\src\Register_file_tb.vhd

@@ -1,6 +1,10 @@
 .\src\ProgramCounter.vhd
 .\src\Instruction_register.vhd
 .\src\Memory.vhd
+.\src\MDR.vhd
+.\src\Register_file.vhd
+.\src\TestBench\Register_file_tb.vhd
+.\src\TestBench\MDR_tb.vhd
 .\src\TestBench\Memory_tb.vhd
 .\src\TestBench\Instruction_register_tb.vhd
 .\src\TestBench\ProgramCounter_tb.vhd

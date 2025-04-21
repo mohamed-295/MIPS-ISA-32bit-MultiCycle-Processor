@@ -26,13 +26,23 @@ FLOWTOOLS=ONLY_IMPL
 [IMPLEMENTATION]
 UCF=
 
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=instruction_register_tb|behavior|0 mdr_tb|behavior|0 memory_tb|behavior|0 register_file_tb|behavior|0 
+ShowHide=ShowTopLevel
+Selected=
+
 [Files.Data]
 .\src\ProgramCounter.vhd=VHDL Source Code
 .\src\Instruction_register.vhd=VHDL Source Code
 .\src\Memory.vhd=VHDL Source Code
+.\src\MDR.vhd=VHDL Source Code
+.\src\Register_file.vhd=VHDL Source Code
+.\src\TestBench\MDR_tb.vhd=VHDL Source Code
+.\src\TestBench\Memory_tb.vhd=VHDL Source Code
 .\src\TestBench\Instruction_register_tb.vhd=VHDL Source Code
 .\src\TestBench\ProgramCounter_tb.vhd=VHDL Source Code
-.\src\TestBench\Memory_tb.vhd=VHDL Source Code
+.\src\TestBench\Register_file_tb.vhd=VHDL Source Code
 
 [Groups]
 TestBench=1
@@ -41,12 +51,11 @@ TestBench=1
 /ProgramCounter.vhd=-1
 /Instruction_register.vhd=-1
 /Memory.vhd=-1
+/MDR.vhd=-1
+/Register_file.vhd=-1
+TestBench/Register_file_tb.vhd=-1
+TestBench/MDR_tb.vhd=-1
 TestBench/Memory_tb.vhd=-1
 TestBench/Instruction_register_tb.vhd=-1
 TestBench/ProgramCounter_tb.vhd=-1
 
-[HierarchyViewer]
-SortInfo=u
-HierarchyInformation=instruction_register_tb|behavior|0 memory|behavioral|0 memory_tb|behavior|0  
-ShowHide=ShowTopLevel
-Selected=

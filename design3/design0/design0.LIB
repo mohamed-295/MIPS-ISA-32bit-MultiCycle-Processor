@@ -1,9 +1,9 @@
-timestamp=1745265364667
+timestamp=1745272313046
 
 [instruction_register]
-A/behavioral=21|./src/Instruction_register.vhd|13|1*13490
-B/behavioral=3*8471
-H/behavioral=0*16738
+A/behavioral=21|./src/Instruction_register.vhd|13|1*154062
+B/behavioral=3*64535
+H/behavioral=0*98710
 R=./src/Instruction_register.vhd|4
 V=0*12136
 
@@ -14,6 +14,20 @@ H/behavior=0*63469
 R=./src/TestBench/Instruction_register_tb.vhd|4
 V=0*16618
 
+[mdr]
+A/behavioral=21|./src/MDR.vhd|11|1*156132
+B/behavioral=3*65725
+H/behavioral=0*100120
+R=./src/MDR.vhd|4
+V=0*101776
+
+[mdr_tb]
+A/behavior=21|./src/TestBench/MDR_tb.vhd|7|1*158089
+B/behavior=3*66843
+H/behavior=0*103221
+R=./src/TestBench/MDR_tb.vhd|4
+V=0*105966
+
 [memory]
 A/behavioral=21|./src/Memory.vhd|16|1*138225
 B/behavioral=3*54381
@@ -22,9 +36,9 @@ R=./src/Memory.vhd|5
 V=0*24913
 
 [memory_tb]
-A/behavior=21|./src/TestBench/Memory_tb.vhd|8|1*149873
-B/behavior=3*58019
-H/behavior=0*94642
+A/behavior=21|./src/TestBench/Memory_tb.vhd|8|1*175454
+B/behavior=3*76521
+H/behavior=0*127987
 R=./src/TestBench/Memory_tb.vhd|5
 V=0*32870
 
@@ -42,6 +56,20 @@ H/behavior=0*20636
 R=./src/TestBench/ProgramCounter_tb.vhd|5
 V=0*23369
 
+[register_file]
+A/behavioral=21|./src/Register_file.vhd|20|1*161008
+B/behavioral=3*70239
+H/behavioral=0*106684
+R=./src/Register_file.vhd|5
+V=0*110126
+
+[register_file_tb]
+A/behavior=21|./src/TestBench/Register_file_tb.vhd|8|1*171728
+B/behavior=3*72273
+H/behavior=0*123394
+R=./src/TestBench/Register_file_tb.vhd|5
+V=0*118658
+
 [tb_programcounter]
 A/behavior=21|./src/TestBench/ProgramCounter_tb.vhd|8|1*6921
 B/behavior=3*873
@@ -51,35 +79,47 @@ V=0*9731
 
 [~A]
 ./src/Instruction_register.vhd~Instruction_register=0*9839*10182
-./src/Instruction_register.vhd~behavioralInstruction_register=0*17390*17724
+./src/Instruction_register.vhd~behavioralInstruction_register=0*99362*99696
+./src/MDR.vhd~MDR=0*99797*100063
+./src/MDR.vhd~behavioralMDR=0*100778*101068
 ./src/Memory.vhd~Memory=0*23477*23889
 ./src/Memory.vhd~behavioralMemory=0*88310*91147
 ./src/ProgramCounter.vhd~ProgramCounter=0*3786*4105
 ./src/ProgramCounter.vhd~behavioralProgramCounter=0*4279*4537
+./src/Register_file.vhd~Register_file=0*106052*106607
+./src/Register_file.vhd~behavioralRegister_file=0*108015*108590
 ./src/TestBench/Instruction_register_tb.vhd~Instruction_register_tb=0*13492*13683
 ./src/TestBench/Instruction_register_tb.vhd~behaviorInstruction_register_tb=0*64876*66451
+./src/TestBench/MDR_tb.vhd~MDR_tb=0*103008*103148
+./src/TestBench/MDR_tb.vhd~behaviorMDR_tb=0*104478*105656
 ./src/TestBench/Memory_tb.vhd~Memory_tb=0*29241*29419
-./src/TestBench/Memory_tb.vhd~behaviorMemory_tb=0*96367*98623
+./src/TestBench/Memory_tb.vhd~behaviorMemory_tb=0*129683*131931
 ./src/TestBench/ProgramCounter_tb.vhd~ProgramCounter_tb=0*20339*20541
 ./src/TestBench/ProgramCounter_tb.vhd~behaviorProgramCounter_tb=0*21996*22963
 ./src/TestBench/ProgramCounter_tb.vhd~behaviortb_ProgramCounter=0*8358*9325
 ./src/TestBench/ProgramCounter_tb.vhd~tb_ProgramCounter=0*6701*6903
+./src/TestBench/Register_file_tb.vhd~Register_file_tb=0*113435*113634
+./src/TestBench/Register_file_tb.vhd~behaviorRegister_file_tb=0*126080*127886
 ./src/pc.vhd~ProgramCounter=0*0*335
 ./src/pc.vhd~behavioralProgramCounter=0*497*743
-ModifyID=177
+ModifyID=229
 Version=73
 
 [~MFT]
-0=181|0design0.mgf|98623|62968
-1=46|1design0.mgf|149873|129977
-3=40|3design0.mgf|58019|41470
+0=237|0design0.mgf|131931|77386
+1=58|1design0.mgf|175454|143697
+3=52|3design0.mgf|76521|49176
 
 [~U]
 instruction_register=Instruction_register 11|0*11360|0*11632
 instruction_register_tb=Instruction_register_tb 11|0*16304|0*16414
+mdr=MDR 11|0*101135|0*101333
+mdr_tb=MDR_tb 11|0*105737|0*105796
 memory=Memory 11|0*23952|0*24252
 memory_tb=Memory_tb 11|0*32607|0*32675
 programcounter=11|0*4626|0*4874
 programcounter_tb=ProgramCounter_tb 11|0*23066|0*23158
+register_file=Register_file 11|0*108677|0*109091
+register_file_tb=Register_file_tb 11|0*118360|0*118449
 tb_programcounter=tb_ProgramCounter 11|0*9428|0*9520
 
