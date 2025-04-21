@@ -1,4 +1,4 @@
-timestamp=1745001695459
+timestamp=1745265364667
 
 [instruction_register]
 A/behavioral=21|./src/Instruction_register.vhd|13|1*13490
@@ -15,16 +15,16 @@ R=./src/TestBench/Instruction_register_tb.vhd|4
 V=0*16618
 
 [memory]
-A/behavioral=21|./src/Memory.vhd|16|1*64493
-B/behavioral=3*31697
-H/behavioral=0*38463
+A/behavioral=21|./src/Memory.vhd|16|1*138225
+B/behavioral=3*54381
+H/behavioral=0*80904
 R=./src/Memory.vhd|5
 V=0*24913
 
 [memory_tb]
-A/behavior=21|./src/TestBench/Memory_tb.vhd|8|1*95678
-B/behavior=3*35551
-H/behavior=0*53924
+A/behavior=21|./src/TestBench/Memory_tb.vhd|8|1*149873
+B/behavior=3*58019
+H/behavior=0*94642
 R=./src/TestBench/Memory_tb.vhd|5
 V=0*32870
 
@@ -53,26 +53,26 @@ V=0*9731
 ./src/Instruction_register.vhd~Instruction_register=0*9839*10182
 ./src/Instruction_register.vhd~behavioralInstruction_register=0*17390*17724
 ./src/Memory.vhd~Memory=0*23477*23889
-./src/Memory.vhd~behavioralMemory=0*42169*43898
+./src/Memory.vhd~behavioralMemory=0*88310*91147
 ./src/ProgramCounter.vhd~ProgramCounter=0*3786*4105
 ./src/ProgramCounter.vhd~behavioralProgramCounter=0*4279*4537
 ./src/TestBench/Instruction_register_tb.vhd~Instruction_register_tb=0*13492*13683
 ./src/TestBench/Instruction_register_tb.vhd~behaviorInstruction_register_tb=0*64876*66451
 ./src/TestBench/Memory_tb.vhd~Memory_tb=0*29241*29419
-./src/TestBench/Memory_tb.vhd~behaviorMemory_tb=0*55620*57259
+./src/TestBench/Memory_tb.vhd~behaviorMemory_tb=0*96367*98623
 ./src/TestBench/ProgramCounter_tb.vhd~ProgramCounter_tb=0*20339*20541
 ./src/TestBench/ProgramCounter_tb.vhd~behaviorProgramCounter_tb=0*21996*22963
 ./src/TestBench/ProgramCounter_tb.vhd~behaviortb_ProgramCounter=0*8358*9325
 ./src/TestBench/ProgramCounter_tb.vhd~tb_ProgramCounter=0*6701*6903
 ./src/pc.vhd~ProgramCounter=0*0*335
 ./src/pc.vhd~behavioralProgramCounter=0*497*743
-ModifyID=147
+ModifyID=177
 Version=73
 
 [~MFT]
-0=151|0design0.mgf|66451|36278
-1=36|1design0.mgf|105997|72765
-3=30|3design0.mgf|39895|23226
+0=181|0design0.mgf|98623|62968
+1=46|1design0.mgf|149873|129977
+3=40|3design0.mgf|58019|41470
 
 [~U]
 instruction_register=Instruction_register 11|0*11360|0*11632

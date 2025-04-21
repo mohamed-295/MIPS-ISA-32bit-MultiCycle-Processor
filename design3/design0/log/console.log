@@ -1,3 +1,12 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom $DSN/src/Memory.vhd
+# Compile...
+# File: c:\My_Designs\design3\design0\src\Memory.vhd
+# Compile Entity "Memory"
+# Entity `Memory' has been skipped - no difference detected.
+# Compile Architecture "behavioral" of Entity "Memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
 acom $DSN/src/TestBench/Memory_tb.vhd
 # Compile...
 # File: c:\My_Designs\design3\design0\src\TestBench\Memory_tb.vhd
@@ -5,13 +14,6 @@ acom $DSN/src/TestBench/Memory_tb.vhd
 # Entity `Memory_tb' has been skipped - no difference detected.
 # Compile Architecture "behavior" of Entity "Memory_tb"
 # Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-endsim
-# All when statements cleared.
-# Simulation has been stopped
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
 asim memory_tb behavior
@@ -27,27 +29,93 @@ asim memory_tb behavior
 # ELAB2: Create instances complete.
 # ELAB2: Elaboration final pass complete - time: 0.3 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 3803 kB (elbread=1070 elab2=1556 kernel=1177 sdf=0)
-# 8:30 PM, Friday, April 18, 2025
+# Allocation: Simulator allocated 3805 kB (elbread=1070 elab2=1558 kernel=1177 sdf=0)
+# 9:45 PM, Monday, April 21, 2025
 # Simulation has been initialized
 # Selected Top-Level: memory_tb (behavior)
-run 100 ns
+run 100ns
+# KERNEL: stopped at time: 100 ns
+endsim
+# All when statements cleared.
+# Simulation has been stopped
+asim memory_tb behavior
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 3805 kB (elbread=1070 elab2=1558 kernel=1177 sdf=0)
+# 9:46 PM, Monday, April 21, 2025
+# Simulation has been initialized
+# Selected Top-Level: memory_tb (behavior)
+run 200ns
+# EXECUTION:: ERROR  : ? Test 3 Failed: Expected 8E80002F (lw instruction)
+# EXECUTION:: Time: 110 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
+# EXECUTION:: ERROR  : ? Test 4 Failed: Expected 20610032 (addi instruction)
+# EXECUTION:: Time: 120 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
+# EXECUTION:: ERROR  : ? Test 5 Failed: Expected 00000001 (data at address 50)
+# EXECUTION:: Time: 130 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
+# EXECUTION:: NOTE   : ? All memory tests passed successfully.
+# EXECUTION:: Time: 130 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
+# KERNEL: stopped at time: 200 ns
+acom $DSN/src/Memory.vhd
+# Compile...
+# File: c:\My_Designs\design3\design0\src\Memory.vhd
+# Compile Entity "Memory"
+# Entity `Memory' has been skipped - no difference detected.
+# Compile Architecture "behavioral" of Entity "Memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
+endsim
+# All when statements cleared.
+# Simulation has been stopped
+asim memory_tb behavior
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+acom $DSN/src/TestBench/Memory_tb.vhd
+# Compile...
+# File: c:\My_Designs\design3\design0\src\TestBench\Memory_tb.vhd
+# Compile Entity "Memory_tb"
+# Entity `Memory_tb' has been skipped - no difference detected.
+# Compile Architecture "behavior" of Entity "Memory_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 3770 kB (elbread=1070 elab2=1523 kernel=1177 sdf=0)
+# 9:53 PM, Monday, April 21, 2025
+# Simulation has been initialized
+# Selected Top-Level: memory_tb (behavior)
+run 200ns
 # EXECUTION:: NOTE   : ? Simulation completed successfully. All tests passed.
 # EXECUTION:: Time: 80 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
-# KERNEL: stopped at time: 100 ns
-acom $DSN/src/TestBench/Instruction_register_tb.vhd
+# KERNEL: stopped at time: 200 ns
+acom $DSN/src/TestBench/Memory_tb.vhd
 # Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\Instruction_register_tb.vhd
-# Compile Entity "Instruction_register_tb"
-# Entity `Instruction_register_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "Instruction_register_tb"
+# File: c:\My_Designs\design3\design0\src\TestBench\Memory_tb.vhd
+# Compile Entity "Memory_tb"
+# Entity `Memory_tb' has been skipped - no difference detected.
+# Compile Architecture "behavior" of Entity "Memory_tb"
 # Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
 endsim
 # All when statements cleared.
 # Simulation has been stopped
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-asim instruction_register_tb behavior
+asim memory_tb behavior
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
 # asim: Stack memory: 32MB
@@ -60,120 +128,14 @@ asim instruction_register_tb behavior
 # ELAB2: Create instances complete.
 # ELAB2: Elaboration final pass complete - time: 0.3 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 2424 kB (elbread=1070 elab2=305 kernel=1049 sdf=0)
-# 8:38 PM, Friday, April 18, 2025
+# Allocation: Simulator allocated 3774 kB (elbread=1070 elab2=1527 kernel=1177 sdf=0)
+# 9:56 PM, Monday, April 21, 2025
 # Simulation has been initialized
-# Selected Top-Level: instruction_register_tb (behavior)
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-endsim
-# All when statements cleared.
-# Simulation has been stopped
-asim instruction_register_tb behavior
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# asim: Stack memory: 32MB
-# asim: Retval memory: 32MB
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# ELAB2: Create instances complete.
-# ELAB2: Elaboration final pass complete - time: 0.2 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 2424 kB (elbread=1070 elab2=305 kernel=1049 sdf=0)
-# 8:38 PM, Friday, April 18, 2025
-# Simulation has been initialized
-# Selected Top-Level: instruction_register_tb (behavior)
+# Selected Top-Level: memory_tb (behavior)
 run 200ns
+# EXECUTION:: NOTE   : Simulation completed successfully. All tests passed.
+# EXECUTION:: Time: 120 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
 # KERNEL: stopped at time: 200 ns
-endsim
-# All when statements cleared.
-# Simulation has been stopped
-asim instruction_register_tb behavior
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# asim: Stack memory: 32MB
-# asim: Retval memory: 32MB
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# ELAB2: Create instances complete.
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 2424 kB (elbread=1070 elab2=305 kernel=1049 sdf=0)
-# 8:39 PM, Friday, April 18, 2025
-# Simulation has been initialized
-# Selected Top-Level: instruction_register_tb (behavior)
-run 100ns
-# KERNEL: stopped at time: 100 ns
-acom $DSN/src/TestBench/Instruction_register_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\Instruction_register_tb.vhd
-# Compile Entity "Instruction_register_tb"
-# Entity `Instruction_register_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "Instruction_register_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-endsim
-# All when statements cleared.
-# Simulation has been stopped
-asim instruction_register_tb behavior
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# asim: Stack memory: 32MB
-# asim: Retval memory: 32MB
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# ELAB2: Create instances complete.
-# ELAB2: Elaboration final pass complete - time: 0.2 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 2425 kB (elbread=1070 elab2=306 kernel=1049 sdf=0)
-# 8:41 PM, Friday, April 18, 2025
-# Simulation has been initialized
-# Selected Top-Level: instruction_register_tb (behavior)
-run 100ns
-# EXECUTION:: NOTE   : ? Simulation completed successfully. All tests passed.
-# EXECUTION:: Time: 90 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
-# KERNEL: stopped at time: 100 ns
-acom $DSN/src/TestBench/Instruction_register_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\Instruction_register_tb.vhd
-# Compile Entity "Instruction_register_tb"
-# Entity `Instruction_register_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "Instruction_register_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-run 100ns
-# KERNEL: stopped at time: 200 ns
-endsim
-# All when statements cleared.
-# Simulation has been stopped
-asim instruction_register_tb behavior
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# asim: Stack memory: 32MB
-# asim: Retval memory: 32MB
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# ELAB2: Create instances complete.
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 2425 kB (elbread=1070 elab2=306 kernel=1049 sdf=0)
-# 8:41 PM, Friday, April 18, 2025
-# Simulation has been initialized
-# Selected Top-Level: instruction_register_tb (behavior)
-run 100ns
-# EXECUTION:: NOTE   :  Simulation completed successfully. All tests passed.
-# EXECUTION:: Time: 90 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
-# KERNEL: stopped at time: 100 ns
 endsim
 # All when statements cleared.
 # Simulation has been stopped

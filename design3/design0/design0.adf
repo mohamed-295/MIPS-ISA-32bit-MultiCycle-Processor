@@ -47,6 +47,6 @@ TestBench/ProgramCounter_tb.vhd=-1
 
 [HierarchyViewer]
 SortInfo=u
-HierarchyInformation=instruction_register_tb|behavior|0 memory_tb|behavior|0 programcounter|behavioral|0 tb_programcounter|behavior|0 
+HierarchyInformation=instruction_register_tb|behavior|0 memory|behavioral|0 memory_tb|behavior|0  
 ShowHide=ShowTopLevel
 Selected=

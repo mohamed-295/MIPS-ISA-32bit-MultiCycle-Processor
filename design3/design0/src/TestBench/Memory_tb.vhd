@@ -7,7 +7,6 @@ end entity;
 
 architecture behavior of Memory_tb is
 
-    -- Signals for DUT
     signal clk_tb        : std_logic := '0';
     signal reset_tb      : std_logic := '0';
     signal mem_write_tb  : std_logic := '0';
@@ -20,8 +19,7 @@ architecture behavior of Memory_tb is
 
 begin
 
-    -- DUT instantiation
-    DUT: entity Memory
+    DUT: entity work.Memory
         port map (
             clk        => clk_tb,
             reset      => reset_tb,
@@ -32,7 +30,6 @@ begin
             mem_data   => mem_data_tb
         );
 
-    -- Clock process
     clk_process: process
     begin
         while true loop
@@ -43,58 +40,81 @@ begin
         end loop;
     end process;
 
-    -- Stimulus process
     stim_proc: process
-begin
-    wait for 20 ns;
+    begin
+        wait for 20 ns;
 
-    -- Apply reset
-    reset_tb <= '1';
-    wait for clk_period;
-    reset_tb <= '0';
+        reset_tb <= '1';
+        wait for clk_period;
+        reset_tb <= '0';
 
-    -- Write value to address 0
-    address_tb <= x"00000000";
-    write_data_tb <= x"DEADBEEF";
-    mem_write_tb <= '1';
-    wait for clk_period;
+        -- Test 1
+        address_tb <= x"00000000";
+        write_data_tb <= x"DEADBEEF";
+        mem_write_tb <= '1';
+        wait for clk_period;
+        mem_write_tb <= '0';
 
-    -- Stop writing
-    mem_write_tb <= '0';
-    write_data_tb <= x"FFFFFFFF"; -- Should not be written
-    wait for clk_period;
+        mem_read_tb <= '1';
+        wait for clk_period;
+        mem_read_tb <= '0';
 
-    -- Read back from address 0
-    mem_read_tb <= '1';
-    wait for clk_period;
-    mem_read_tb <= '0';
+        assert mem_data_tb = x"DEADBEEF"
+        report "Error: Read from 0x00000000 failed" severity error;
 
-    -- Check the read value from address 0
-    assert mem_data_tb = x"DEADBEEF"
-    report "? Error: Read from address 0x00000000 failed. Expected: DEADBEEF"
-    severity error;
+        -- Test 2
+        address_tb <= x"00000004";
+        write_data_tb <= x"12345678";
+        mem_write_tb <= '1';
+        wait for clk_period;
+        mem_write_tb <= '0';
 
-    -- Write to a different address
-    address_tb <= x"00000004";
-    write_data_tb <= x"12345678";
-    mem_write_tb <= '1';
-    wait for clk_period;
-    mem_write_tb <= '0';
+        mem_read_tb <= '1';
+        wait for clk_period;
+        mem_read_tb <= '0';
 
-    -- Read back the second value
-    mem_read_tb <= '1';
-    wait for clk_period;
-    mem_read_tb <= '0';
+        assert mem_data_tb = x"12345678"
+        report "Error: Read from 0x00000004 failed" severity error;
 
-    -- Check the read value from address 0x00000004
-    assert mem_data_tb = x"12345678"
-    report "? Error: Read from address 0x00000004 failed. Expected: 12345678"
-    severity error;
+        -- Test 3
+        address_tb <= x"00000080";
+        write_data_tb <= x"00010203";
+        mem_write_tb <= '1';
+        wait for clk_period;
+        mem_write_tb <= '0';
 
-    report "? Simulation completed successfully. All tests passed." severity note;
+        mem_read_tb <= '1';
+        wait for clk_period;
+        mem_read_tb <= '0';
 
-    wait;
-end process;
+        assert mem_data_tb = x"00010203"
+        report "Error: Read from 0x00000080 failed" severity error;
 
+        -- Test 4
+        address_tb <= x"00000088";
+        write_data_tb <= x"CAFEBABE";
+        mem_write_tb <= '1';
+        wait for clk_period;
+        mem_write_tb <= '0';
+
+        mem_read_tb <= '1';
+        wait for clk_period;
+        mem_read_tb <= '0';
+
+        assert mem_data_tb = x"CAFEBABE"
+        report "Error: Read from 0x00000088 failed" severity error;
+
+        -- Test 5
+        address_tb <= x"00000100";
+        mem_read_tb <= '1';
+        wait for clk_period;
+        mem_read_tb <= '0';
+
+        assert mem_data_tb = x"00000000"
+        report "Error: Read from 0x00000100 failed" severity error;
+
+        report "Simulation completed successfully. All tests passed." severity note;
+        wait;
+    end process;
 
 end architecture;

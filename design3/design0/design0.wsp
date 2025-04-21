@@ -72,4 +72,4 @@ WindowWorkspaceInfo=2C0000000000000003000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD700
 [CACHEDOC|Aldec.Project.Generic.7|c:\My_Designs\design3\design0\design0.adf|]
 Path=/
 [Gui config]
-RunFor=100 ns
+RunFor=100ns
