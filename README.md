@@ -62,7 +62,7 @@ address_1_tb   <= "00001";
 wait for clk_period;
 assert reg1_data_tb = x"AAAA5555"
   report "Error: Register 1 read incorrect" severity error;
-
+```
 ### Example Test Cases
 
 - **Writing and Reading Different Values at Different Memory Locations:**
