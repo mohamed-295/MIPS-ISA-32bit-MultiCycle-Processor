@@ -62,17 +62,27 @@ address_1_tb   <= "00001";
 wait for clk_period;
 assert reg1_data_tb = x"AAAA5555"
   report "Error: Register 1 read incorrect" severity error;
-Example Test Cases
-Writing and reading different values at different memory locations
-Ensuring register file returns correct data after write
-Verifying instruction register captures correct instruction
-Files
-File	Description
-register_a.vhd	Register A module
-register_b.vhd	Register B module
-aluout.vhd	ALUOut register module
-program_counter.vhd	PC implementation
-instruction_register.vhd	Instruction Register module
-memory_data_register.vhd	Memory Data Register module
-register_file.vhd	32-register file
-*_tb.vhd	Testbenches for each module
+
+### Example Test Cases
+
+- **Writing and Reading Different Values at Different Memory Locations:**
+  - Test the ability to write data to specific memory addresses and read it back correctly.
+  
+- **Ensuring Register File Returns Correct Data After Write:**
+  - Verify that data written to a register can be accurately read from the same register.
+  
+- **Verifying Instruction Register Captures Correct Instruction:**
+  - Ensure that the instruction register correctly stores and outputs the fetched instruction.
+
+## Files
+
+| File                        | Description                          |
+|-----------------------------|--------------------------------------|
+| `register_a.vhd`            | Register A module                    |
+| `register_b.vhd`            | Register B module                    |
+| `aluout.vhd`                | ALUOut register module               |
+| `program_counter.vhd`       | PC implementation                    |
+| `instruction_register.vhd`  | Instruction Register module          |
+| `memory_data_register.vhd`  | Memory Data Register module          |
+| `register_file.vhd`         | 32-register file                     |
+| `*_tb.vhd`                  | Testbenches for each module          |
