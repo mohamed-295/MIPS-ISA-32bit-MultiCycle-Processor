@@ -1,12 +1,12 @@
-elbread.dll ver. 1.0.5.365 Thu Apr 24 00:11:55 2025
+elbread.dll ver. 1.0.5.365 Thu Apr 24 00:44:53 2025
 
 
------------------------------------
-Entity     | Architecture | Library
------------------------------------
-aluout_tb  | behavior     | design0
-aluout     | behavioral   | design0
------------------------------------
+---------------------------------------
+Entity         | Architecture | Library
+---------------------------------------
+register_a_tb  | behavior     | design0
+register_a     | behavioral   | design0
+---------------------------------------
 
 -------------------------
 Package         | Library

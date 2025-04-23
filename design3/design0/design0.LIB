@@ -1,16 +1,16 @@
-timestamp=1745445239616
+timestamp=1745448422077
 
 [aluout]
-A/behavioral=21|./src/aluout.vhd|11|1*185006
-B/behavioral=3*85740
-H/behavioral=0*141648
+A/behavioral=21|./src/aluout.vhd|12|1*198244
+B/behavioral=3*96725
+H/behavioral=0*159675
 R=./src/aluout.vhd|4
-V=0*143256
+V=0*161362
 
 [aluout_tb]
-A/behavior=21|./src/aluout_tb.vhd|7|1*191820
-B/behavior=3*91873
-H/behavior=0*150188
+A/behavior=21|./src/TestBench/aluout_tb.vhd|7|1*208967
+B/behavior=3*104227
+H/behavior=0*170157
 R=./src/aluout_tb.vhd|4
 V=0*152602
 
@@ -78,30 +78,30 @@ R=./src/register_a .vhd|4
 V=0*133916
 
 [register_a]
-A/behavioral=21|./src/register_a .vhd|11|1*181425
-B/behavioral=3*83938
-H/behavioral=0*135403
+A/behavioral=21|./src/register_a .vhd|12|1*194307
+B/behavioral=3*94489
+H/behavioral=0*153046
 R=./src/register_a .vhd|4
-V=0*137045
+V=0*154765
 
 [register_a_tb]
-A/behavior=21|./src/register_a_tb.vhd|7|1*186792
-B/behavior=3*86641
-H/behavior=0*144632
+A/behavior=21|./src/TestBench/register_a_tb.vhd|7|1*202967
+B/behavior=3*97843
+H/behavior=0*165051
 R=./src/register_a_tb.vhd|4
 V=0*147102
 
 [register_b]
-A/behavioral=21|./src/register_b.vhd|11|1*183216
-B/behavioral=3*84839
-H/behavioral=0*138537
+A/behavioral=21|./src/register_b.vhd|12|1*196276
+B/behavioral=3*95607
+H/behavioral=0*158298
 R=./src/register_b.vhd|4
-V=0*140177
+V=0*157052
 
 [register_b_tb]
-A/behavior=21|./src/register_b_tb.vhd|7|1*189306
-B/behavior=3*89257
-H/behavior=0*147420
+A/behavior=21|./src/TestBench/register_b_tb.vhd|7|1*205967
+B/behavior=3*101035
+H/behavior=0*167604
 R=./src/register_b_tb.vhd|4
 V=0*149890
 
@@ -149,32 +149,35 @@ V=0*9731
 ./src/TestBench/ProgramCounter_tb.vhd~tb_ProgramCounter=0*6701*6903
 ./src/TestBench/Register_file_tb.vhd~Register_file_tb=0*113435*113634
 ./src/TestBench/Register_file_tb.vhd~behaviorRegister_file_tb=0*126080*127886
-./src/aluout.vhd~aluout=0*141333*141585
-./src/aluout.vhd~behavioralaluout=0*142305*142567
+./src/TestBench/aluout_tb.vhd~behavioraluout_tb=0*171421*172587
+./src/TestBench/register_a_tb.vhd~behaviorregister_a_tb=0*166323*167509
+./src/TestBench/register_b_tb.vhd~behaviorregister_b_tb=0*168876*170062
+./src/aluout.vhd~aluout=0*159335*159612
+./src/aluout.vhd~behavioralaluout=0*160332*160629
 ./src/aluout_tb.vhd~aluout_tb=0*149980*150119
 ./src/aluout_tb.vhd~behavioraluout_tb=0*151366*152281
 ./src/pc.vhd~ProgramCounter=0*0*335
 ./src/pc.vhd~behavioralProgramCounter=0*497*743
 ./src/register_a .vhd~behavioralreg=0*132988*133240
-./src/register_a .vhd~behavioralregister_a=0*136058*136327
+./src/register_a .vhd~behavioralregister_a=0*153701*154003
 ./src/register_a .vhd~reg=0*132018*132269
-./src/register_a .vhd~register_a=0*135066*135331
+./src/register_a .vhd~register_a=0*152684*152974
 ./src/register_a_tb.vhd~behaviorregister_a_tb=0*145818*146753
 ./src/register_a_tb.vhd~register_a_tb=0*144404*144555
-./src/register_b.vhd~behavioralregister_b=0*139192*139460
-./src/register_b.vhd~register_b=0*138202*138466
+./src/register_b.vhd~behavioralregister_b=0*158953*159254
+./src/register_b.vhd~register_b=0*156012*156301
 ./src/register_b_tb.vhd~behaviorregister_b_tb=0*148606*149541
 ./src/register_b_tb.vhd~register_b_tb=0*147192*147343
-ModifyID=278
+ModifyID=344
 Version=73
 
 [~MFT]
-0=293|0design0.mgf|152602|77386
-1=65|1design0.mgf|191820|143697
-3=59|3design0.mgf|91873|49176
+0=359|0design0.mgf|172587|92725
+1=79|1design0.mgf|208967|159338
+3=73|3design0.mgf|104227|59727
 
 [~U]
-aluout=11|0*142640|0*142827
+aluout=11|0*160702|0*160911
 aluout_tb=11|0*152358|0*152426
 instruction_register=Instruction_register 11|0*11360|0*11632
 instruction_register_tb=Instruction_register_tb 11|0*16304|0*16414
@@ -185,9 +188,9 @@ memory_tb=Memory_tb 11|0*32607|0*32675
 programcounter=11|0*4626|0*4874
 programcounter_tb=ProgramCounter_tb 11|0*23066|0*23158
 reg=11|0*133315|0*133493
-register_a=11|0*136409|0*136608
+register_a=11|0*154085|0*154306
 register_a_tb=11|0*146838|0*146918
-register_b=11|0*139541|0*139740
+register_b=11|0*156372|0*156593
 register_b_tb=11|0*149626|0*149706
 register_file=Register_file 11|0*108677|0*109091
 register_file_tb=Register_file_tb 11|0*118360|0*118449

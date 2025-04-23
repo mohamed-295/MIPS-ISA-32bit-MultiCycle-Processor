@@ -1840,7 +1840,7 @@ V 000051 55 1731          1745444525701 behavioral
   (_model . behavioral 2 -1
   )
 )
-V 000051 55 1740          1745444758344 behavioral
+I 000051 55 1740          1745444758344 behavioral
 (_unit VHDL (register_a 0 4 (behavioral 0 11 ))
   (_version v33)
   (_time 1745444758343 2025.04.23 23:45:58)
@@ -1873,7 +1873,7 @@ V 000051 55 1740          1745444758344 behavioral
   (_model . behavioral 2 -1
   )
 )
-V 000051 55 1739          1745444782569 behavioral
+I 000051 55 1739          1745444782569 behavioral
 (_unit VHDL (register_b 0 4 (behavioral 0 11 ))
   (_version v33)
   (_time 1745444782569 2025.04.23 23:46:22)
@@ -1906,7 +1906,7 @@ V 000051 55 1739          1745444782569 behavioral
   (_model . behavioral 2 -1
   )
 )
-V 000051 55 1735          1745444820973 behavioral
+I 000051 55 1735          1745444820973 behavioral
 (_unit VHDL (aluout 0 4 (behavioral 0 11 ))
   (_version v33)
   (_time 1745444820972 2025.04.23 23:47:00)
@@ -1939,7 +1939,7 @@ V 000051 55 1735          1745444820973 behavioral
   (_model . behavioral 2 -1
   )
 )
-V 000049 55 2465          1745445076594 behavior
+I 000049 55 2465          1745445076594 behavior
 (_unit VHDL (register_a_tb 0 4 (behavior 0 7 ))
   (_version v33)
   (_time 1745445076593 2025.04.23 23:51:16)
@@ -1987,7 +1987,7 @@ V 000049 55 2465          1745445076594 behavior
   (_model . behavior 2 -1
   )
 )
-V 000049 55 2465          1745445172734 behavior
+I 000049 55 2465          1745445172734 behavior
 (_unit VHDL (register_b_tb 0 4 (behavior 0 7 ))
   (_version v33)
   (_time 1745445172733 2025.04.23 23:52:52)
@@ -2035,7 +2035,7 @@ V 000049 55 2465          1745445172734 behavior
   (_model . behavior 2 -1
   )
 )
-V 000049 55 2438          1745445239562 behavior
+I 000049 55 2438          1745445239562 behavior
 (_unit VHDL (aluout_tb 0 4 (behavior 0 7 ))
   (_version v33)
   (_time 1745445239562 2025.04.23 23:53:59)
@@ -2072,6 +2072,327 @@ V 000049 55 2438          1745445239562 behavior
     (_type (_external ~extSTD.STANDARD.TIME (std STANDARD TIME)))
   )
   (_static
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 65 65 65 65 53 53 53 53 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 49 50 51 52 53 54 55 56 )
+    (97 108 117 111 117 116 95 116 98 32 99 111 109 112 108 101 116 101 100 32 115 117 99 99 101 115 115 102 117 108 108 121 46 )
+  )
+  (_model . behavior 2 -1
+  )
+)
+V 000051 55 1918          1745447839506 behavioral
+(_unit VHDL (register_a 0 4 (behavioral 0 12 ))
+  (_version v33)
+  (_time 1745447839505 2025.04.24 00:37:19)
+  (_source (\./src/register_a .vhd\))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745447839503)
+    (_use )
+  )
+  (_object
+    (_port (_internal clk ~extieee.std_logic_1164.std_logic 0 5 (_entity (_in )(_active)(_lastactive)(_event)(_lastevent)(_edge))))
+    (_port (_internal reset ~extieee.std_logic_1164.std_logic 0 6 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~12 0 7 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal data_in ~std_logic_vector{31~downto~0}~12 0 7 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~122 0 8 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal data_out ~std_logic_vector{31~downto~0}~122 0 8 (_entity (_out ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 0 14 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal reg_a ~std_logic_vector{31~downto~0}~13 0 14 (_architecture (_uni ))))
+    (_process
+      (line__18(_architecture 0 0 18 (_process (_simple)(_target(4))(_sensitivity(0))(_read(2)(1)))))
+      (line__26(_architecture 1 0 26 (_assignment (_simple)(_alias((data_out)(reg_a)))(_target(3))(_sensitivity(4)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+  )
+  (_static
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+  )
+  (_model . behavioral 2 -1
+  )
+)
+V 000051 55 1917          1745447884743 behavioral
+(_unit VHDL (register_b 0 4 (behavioral 0 12 ))
+  (_version v33)
+  (_time 1745447884742 2025.04.24 00:38:04)
+  (_source (\./src/register_b.vhd\))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745447879583)
+    (_use )
+  )
+  (_object
+    (_port (_internal clk ~extieee.std_logic_1164.std_logic 0 5 (_entity (_in )(_active)(_lastactive)(_event)(_lastevent)(_edge))))
+    (_port (_internal reset ~extieee.std_logic_1164.std_logic 0 6 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~12 0 7 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal data_in ~std_logic_vector{31~downto~0}~12 0 7 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~122 0 8 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal data_out ~std_logic_vector{31~downto~0}~122 0 8 (_entity (_out ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 0 14 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal reg_b ~std_logic_vector{31~downto~0}~13 0 14 (_architecture (_uni ))))
+    (_process
+      (line__18(_architecture 0 0 18 (_process (_simple)(_target(4))(_sensitivity(0))(_read(1)(2)))))
+      (line__26(_architecture 1 0 26 (_assignment (_simple)(_alias((data_out)(reg_b)))(_target(3))(_sensitivity(4)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+  )
+  (_static
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+  )
+  (_model . behavioral 2 -1
+  )
+)
+V 000051 55 1913          1745447919318 behavioral
+(_unit VHDL (aluout 0 4 (behavioral 0 12 ))
+  (_version v33)
+  (_time 1745447919317 2025.04.24 00:38:39)
+  (_source (\./src/aluout.vhd\))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745447919313)
+    (_use )
+  )
+  (_object
+    (_port (_internal clk ~extieee.std_logic_1164.std_logic 0 5 (_entity (_in )(_active)(_lastactive)(_event)(_lastevent)(_edge))))
+    (_port (_internal reset ~extieee.std_logic_1164.std_logic 0 6 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~12 0 7 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal data_in ~std_logic_vector{31~downto~0}~12 0 7 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~122 0 8 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal data_out ~std_logic_vector{31~downto~0}~122 0 8 (_entity (_out ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 0 14 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal reg_alu ~std_logic_vector{31~downto~0}~13 0 14 (_architecture (_uni ))))
+    (_process
+      (line__18(_architecture 0 0 18 (_process (_simple)(_target(4))(_sensitivity(0))(_read(1)(2)))))
+      (line__26(_architecture 1 0 26 (_assignment (_simple)(_alias((data_out)(reg_alu)))(_target(3))(_sensitivity(4)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+  )
+  (_static
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+  )
+  (_model . behavioral 2 -1
+  )
+)
+I 000049 55 2710          1745448213627 behavior
+(_unit VHDL (register_a_tb 1 4 (behavior 1 7 ))
+  (_version v33)
+  (_time 1745448213626 2025.04.24 00:43:33)
+  (_source (\./src/register_a_tb.vhd\(\./src/TestBench/register_a_tb.vhd\)))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745445076588)
+    (_use )
+  )
+  (_instantiation DUT 1 18 (_entity . register_a)
+    (_port
+      ((clk)(clk_tb))
+      ((reset)(reset_tb))
+      ((data_in)(data_in_tb))
+      ((data_out)(data_out_tb))
+    )
+  )
+  (_object
+    (_signal (_internal clk_tb ~extieee.std_logic_1164.std_logic 1 9 (_architecture (_uni ((i 2))))))
+    (_signal (_internal reset_tb ~extieee.std_logic_1164.std_logic 1 10 (_architecture (_uni ((i 2))))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 1 11 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal data_in_tb ~std_logic_vector{31~downto~0}~13 1 11 (_architecture (_uni ((_others(i 2)))))))
+    (_signal (_internal data_out_tb ~std_logic_vector{31~downto~0}~13 1 12 (_architecture (_uni ))))
+    (_constant (_internal clk_period ~extSTD.STANDARD.TIME 1 14 (_architecture ((ns 4621819117588971520)))))
+    (_process
+      (clk_process(_architecture 0 1 27 (_process (_wait_for)(_target(0)))))
+      (stim_proc(_architecture 1 1 38 (_process (_wait_for)(_target(1)(2))(_read(3)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+    (_type (_external ~extSTD.STANDARD.TIME (std STANDARD TIME)))
+  )
+  (_static
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 65 65 65 65 53 53 53 53 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 49 50 51 52 53 54 55 56 )
+    (114 101 103 105 115 116 101 114 95 97 95 116 98 32 99 111 109 112 108 101 116 101 100 32 115 117 99 99 101 115 115 102 117 108 108 121 46 )
+  )
+  (_model . behavior 2 -1
+  )
+)
+V 000049 55 2951          1745448270995 behavior
+(_unit VHDL (register_a_tb 1 4 (behavior 1 7 ))
+  (_version v33)
+  (_time 1745448270994 2025.04.24 00:44:30)
+  (_source (\./src/register_a_tb.vhd\(\./src/TestBench/register_a_tb.vhd\)))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745445076588)
+    (_use )
+  )
+  (_instantiation DUT 1 18 (_entity . register_a)
+    (_port
+      ((clk)(clk_tb))
+      ((reset)(reset_tb))
+      ((data_in)(data_in_tb))
+      ((data_out)(data_out_tb))
+    )
+  )
+  (_object
+    (_signal (_internal clk_tb ~extieee.std_logic_1164.std_logic 1 9 (_architecture (_uni ((i 2))))))
+    (_signal (_internal reset_tb ~extieee.std_logic_1164.std_logic 1 10 (_architecture (_uni ((i 2))))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 1 11 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal data_in_tb ~std_logic_vector{31~downto~0}~13 1 11 (_architecture (_uni ((_others(i 2)))))))
+    (_signal (_internal data_out_tb ~std_logic_vector{31~downto~0}~13 1 12 (_architecture (_uni ))))
+    (_constant (_internal clk_period ~extSTD.STANDARD.TIME 1 14 (_architecture ((ns 4621819117588971520)))))
+    (_process
+      (clk_process(_architecture 0 1 27 (_process (_wait_for)(_target(0)))))
+      (stim_proc(_architecture 1 1 38 (_process (_wait_for)(_target(1)(2))(_read(3)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+    (_type (_external ~extSTD.STANDARD.TIME (std STANDARD TIME)))
+  )
+  (_static
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 48 48 48 48 48 48 48 48 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 65 65 65 65 53 53 53 53 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 49 50 51 52 53 54 55 56 )
+    (114 101 103 105 115 116 101 114 95 97 95 116 98 32 99 111 109 112 108 101 116 101 100 32 115 117 99 99 101 115 115 102 117 108 108 121 46 )
+  )
+  (_model . behavior 2 -1
+  )
+)
+V 000049 55 2951          1745448387513 behavior
+(_unit VHDL (register_b_tb 1 4 (behavior 1 7 ))
+  (_version v33)
+  (_time 1745448387512 2025.04.24 00:46:27)
+  (_source (\./src/register_b_tb.vhd\(\./src/TestBench/register_b_tb.vhd\)))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745445172729)
+    (_use )
+  )
+  (_instantiation DUT 1 18 (_entity . register_b)
+    (_port
+      ((clk)(clk_tb))
+      ((reset)(reset_tb))
+      ((data_in)(data_in_tb))
+      ((data_out)(data_out_tb))
+    )
+  )
+  (_object
+    (_signal (_internal clk_tb ~extieee.std_logic_1164.std_logic 1 9 (_architecture (_uni ((i 2))))))
+    (_signal (_internal reset_tb ~extieee.std_logic_1164.std_logic 1 10 (_architecture (_uni ((i 2))))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 1 11 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal data_in_tb ~std_logic_vector{31~downto~0}~13 1 11 (_architecture (_uni ((_others(i 2)))))))
+    (_signal (_internal data_out_tb ~std_logic_vector{31~downto~0}~13 1 12 (_architecture (_uni ))))
+    (_constant (_internal clk_period ~extSTD.STANDARD.TIME 1 14 (_architecture ((ns 4621819117588971520)))))
+    (_process
+      (clk_process(_architecture 0 1 27 (_process (_wait_for)(_target(0)))))
+      (stim_proc(_architecture 1 1 38 (_process (_wait_for)(_target(1)(2))(_read(3)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+    (_type (_external ~extSTD.STANDARD.TIME (std STANDARD TIME)))
+  )
+  (_static
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 48 48 48 48 48 48 48 48 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 65 65 65 65 53 53 53 53 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (2 2 2 3 2 2 3 2 2 2 3 3 2 3 2 2 2 3 2 3 2 3 3 2 2 3 3 3 3 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 49 50 51 52 53 54 55 56 )
+    (114 101 103 105 115 116 101 114 95 98 95 116 98 32 99 111 109 112 108 101 116 101 100 32 115 117 99 99 101 115 115 102 117 108 108 121 46 )
+  )
+  (_model . behavior 2 -1
+  )
+)
+V 000049 55 2920          1745448422041 behavior
+(_unit VHDL (aluout_tb 1 4 (behavior 1 7 ))
+  (_version v33)
+  (_time 1745448422040 2025.04.24 00:47:02)
+  (_source (\./src/aluout_tb.vhd\(\./src/TestBench/aluout_tb.vhd\)))
+  (_use (std(standard))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745445239555)
+    (_use )
+  )
+  (_instantiation DUT 1 18 (_entity . aluout)
+    (_port
+      ((clk)(clk_tb))
+      ((reset)(reset_tb))
+      ((data_in)(data_in_tb))
+      ((data_out)(data_out_tb))
+    )
+  )
+  (_object
+    (_signal (_internal clk_tb ~extieee.std_logic_1164.std_logic 1 9 (_architecture (_uni ((i 2))))))
+    (_signal (_internal reset_tb ~extieee.std_logic_1164.std_logic 1 10 (_architecture (_uni ((i 2))))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 1 11 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_signal (_internal data_in_tb ~std_logic_vector{31~downto~0}~13 1 11 (_architecture (_uni ((_others(i 2)))))))
+    (_signal (_internal data_out_tb ~std_logic_vector{31~downto~0}~13 1 12 (_architecture (_uni ))))
+    (_constant (_internal clk_period ~extSTD.STANDARD.TIME 1 14 (_architecture ((ns 4621819117588971520)))))
+    (_process
+      (clk_process(_architecture 0 1 27 (_process (_wait_for)(_target(0)))))
+      (stim_proc(_architecture 1 1 38 (_process (_wait_for)(_target(1)(2))(_read(3)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+    (_type (_external ~extSTD.STANDARD.TIME (std STANDARD TIME)))
+  )
+  (_static
+    (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+    (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 48 48 48 48 48 48 48 48 )
     (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
     (3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 2 3 2 3 2 3 2 3 2 3 2 3 2 3 2 3 )
     (69 114 114 111 114 58 32 79 117 116 112 117 116 32 109 105 115 109 97 116 99 104 32 97 102 116 101 114 32 119 114 105 116 105 110 103 32 65 65 65 65 53 53 53 53 )

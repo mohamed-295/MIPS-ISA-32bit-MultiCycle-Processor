@@ -1,4 +1,5 @@
-MESSAGE "File: c:\My_Designs\design3\design0\src\aluout_tb.vhd" 
+MESSAGE "File: c:\My_Designs\design3\design0\src\TestBench\aluout_tb.vhd" 
 MESSAGE "Compile Entity "aluout_tb"" 
+MESSAGE "Entity `aluout_tb' has been skipped - no difference detected." 
 MESSAGE "Compile Architecture "behavior" of Entity "aluout_tb"" 
 SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]" 
