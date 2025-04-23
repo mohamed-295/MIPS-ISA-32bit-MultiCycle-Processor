@@ -1,23 +1,37 @@
-229
-~E 1 "./src/TestBench/MDR_tb.vhd" 4 mdr_tb
-~A 1 "./src/TestBench/MDR_tb.vhd" 7 behavior
-~E 1 "./src/TestBench/Instruction_register_tb.vhd" 4 instruction_register_tb
-~A 1 "./src/TestBench/Instruction_register_tb.vhd" 7 behavior
-~E 1 "./src/Instruction_register.vhd" 4 instruction_register
-~A 1 "./src/Instruction_register.vhd" 13 behavioral
-~E 1 "./src/MDR.vhd" 4 mdr
-~A 1 "./src/MDR.vhd" 11 behavioral
-~E 1 "./src/TestBench/ProgramCounter_tb.vhd" 5 programcounter_tb
-~A 1 "./src/TestBench/ProgramCounter_tb.vhd" 8 behavior
+278
 ~E 1 "./src/TestBench/Memory_tb.vhd" 5 memory_tb
 ~A 1 "./src/TestBench/Memory_tb.vhd" 8 behavior
+~E 1 "./src/TestBench/Instruction_register_tb.vhd" 4 instruction_register_tb
+~A 1 "./src/TestBench/Instruction_register_tb.vhd" 7 behavior
+~E 1 "./src/aluout_tb.vhd" 4 aluout_tb
+~A 1 "./src/aluout_tb.vhd" 7 behavior
+~E 1 "./src/aluout.vhd" 4 aluout
+~A 1 "./src/aluout.vhd" 11 behavioral
+~E 1 "./src/Instruction_register.vhd" 4 instruction_register
+~A 1 "./src/Instruction_register.vhd" 13 behavioral
+~E 1 "./src/TestBench/MDR_tb.vhd" 4 mdr_tb
+~A 1 "./src/TestBench/MDR_tb.vhd" 7 behavior
+~E 1 "./src/MDR.vhd" 4 mdr
+~A 1 "./src/MDR.vhd" 11 behavioral
 ~E 1 "./src/Memory.vhd" 5 memory
 ~A 1 "./src/Memory.vhd" 16 behavioral
+~E 1 "./src/register_a .vhd" 4 register_a
+~A 1 "./src/register_a .vhd" 11 behavioral
+~E 1 "./src/TestBench/ProgramCounter_tb.vhd" 5 programcounter_tb
+~A 1 "./src/TestBench/ProgramCounter_tb.vhd" 8 behavior
 ~E 1 "./src/ProgramCounter.vhd" 4 programcounter
 ~A 1 "./src/ProgramCounter.vhd" 12 behavioral
-~E 1 "./src/TestBench/Register_file_tb.vhd" 5 register_file_tb
-~A 1 "./src/TestBench/Register_file_tb.vhd" 8 behavior
+~E 1 "./src/register_a .vhd" 4 reg
+~A 1 "./src/register_a .vhd" 11 behavioral
 ~E 1 "./src/Register_file.vhd" 5 register_file
 ~A 1 "./src/Register_file.vhd" 20 behavioral
+~E 1 "./src/register_b.vhd" 4 register_b
+~A 1 "./src/register_b.vhd" 11 behavioral
+~E 1 "./src/register_a_tb.vhd" 4 register_a_tb
+~A 1 "./src/register_a_tb.vhd" 7 behavior
+~E 1 "./src/register_b_tb.vhd" 4 register_b_tb
+~A 1 "./src/register_b_tb.vhd" 7 behavior
+~E 1 "./src/TestBench/Register_file_tb.vhd" 5 register_file_tb
+~A 1 "./src/TestBench/Register_file_tb.vhd" 8 behavior
 ~E 1 "./src/TestBench/ProgramCounter_tb.vhd" 5 tb_programcounter
 ~A 1 "./src/TestBench/ProgramCounter_tb.vhd" 8 behavior

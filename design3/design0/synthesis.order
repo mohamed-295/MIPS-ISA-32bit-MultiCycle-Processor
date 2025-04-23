@@ -8,3 +8,9 @@ i<>.\src\MDR.vhd
 i<>.\src\MDR_tb.vhd
 i<>.\src\Register_file.vhd
 i<>.\src\Register_file_tb.vhd
+i<>.\src\register_a .vhd
+i<>.\src\register_b.vhd
+i<>.\src\aluout.vhd
+i<>.\src\register_a_tb.vhd
+i<>.\src\register_b_tb.vhd
+i<>.\src\aluout_tb.vhd
