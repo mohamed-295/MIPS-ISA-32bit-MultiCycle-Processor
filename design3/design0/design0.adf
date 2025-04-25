@@ -28,7 +28,7 @@ UCF=
 
 [HierarchyViewer]
 SortInfo=u
-HierarchyInformation=aluout_tb|behavior|0 register_a_tb|behavior|0   
+HierarchyInformation=memory_tb|behavior|0 register_a_tb|behavior|0    
 ShowHide=ShowTopLevel
 Selected=
 

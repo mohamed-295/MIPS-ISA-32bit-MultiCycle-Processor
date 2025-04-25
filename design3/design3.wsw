@@ -1,7 +1,7 @@
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\TestBench\register_a_tb.vhd|]
-TemplateId=0
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\TestBench\register_b_tb.vhd|]
-TemplateId=0
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\TestBench\aluout_tb.vhd|]
 TemplateId=0
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\Memory.vhd|]
+TemplateId=0
 ActiveDocument=1
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design0\src\TestBench\Memory_tb.vhd|]
+TemplateId=0

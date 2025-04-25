@@ -1,4 +1,4 @@
-344
+356
 ~E 1 "./src/TestBench/Memory_tb.vhd" 5 memory_tb
 ~A 1 "./src/TestBench/Memory_tb.vhd" 8 behavior
 ~E 1 "./src/TestBench/Instruction_register_tb.vhd" 4 instruction_register_tb

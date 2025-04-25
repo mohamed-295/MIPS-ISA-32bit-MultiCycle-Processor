@@ -1,4 +1,4 @@
-timestamp=1745448422077
+timestamp=1745618343138
 
 [aluout]
 A/behavioral=21|./src/aluout.vhd|12|1*198244
@@ -43,9 +43,9 @@ R=./src/TestBench/MDR_tb.vhd|4
 V=0*105966
 
 [memory]
-A/behavioral=21|./src/Memory.vhd|16|1*138225
-B/behavioral=3*54381
-H/behavioral=0*80904
+A/behavioral=21|./src/Memory.vhd|16|1*220077
+B/behavioral=3*107419
+H/behavioral=0*183007
 R=./src/Memory.vhd|5
 V=0*24913
 
@@ -132,7 +132,7 @@ V=0*9731
 ./src/MDR.vhd~MDR=0*99797*100063
 ./src/MDR.vhd~behavioralMDR=0*100778*101068
 ./src/Memory.vhd~Memory=0*23477*23889
-./src/Memory.vhd~behavioralMemory=0*88310*91147
+./src/Memory.vhd~behavioralMemory=0*190413*193267
 ./src/ProgramCounter.vhd~ProgramCounter=0*3786*4105
 ./src/ProgramCounter.vhd~behavioralProgramCounter=0*4279*4537
 ./src/Register_file.vhd~Register_file=0*106052*106607
@@ -168,13 +168,13 @@ V=0*9731
 ./src/register_b.vhd~register_b=0*156012*156301
 ./src/register_b_tb.vhd~behaviorregister_b_tb=0*148606*149541
 ./src/register_b_tb.vhd~register_b_tb=0*147192*147343
-ModifyID=344
+ModifyID=356
 Version=73
 
 [~MFT]
-0=359|0design0.mgf|172587|92725
-1=79|1design0.mgf|208967|159338
-3=73|3design0.mgf|104227|59727
+0=371|0design0.mgf|193267|113374
+1=83|1design0.mgf|220077|175610
+3=77|3design0.mgf|107419|63365
 
 [~U]
 aluout=11|0*160702|0*160911

@@ -1,76 +1,12 @@
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
-acom "$DSN/src/register_a .vhd"
+acom $DSN/src/Memory.vhd
 # Compile...
-# File: c:\My_Designs\design3\design0\src\register_a .vhd
-# Compile Entity "register_a"
-# Compile Architecture "behavioral" of Entity "register_a"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-acom $DSN/src/register_b.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\register_b.vhd
-# Compile Entity "register_b"
-# Compile Architecture "behavioral" of Entity "register_b"
-# Error: COMP96_0078: register_b.vhd : (21, 4): Unknown identifier "reg_a".
-# Error: COMP96_0133: register_b.vhd : (21, 4): Cannot find object declaration.
-# Compile failure 2 Errors 0 Warnings  Analysis time :  0.0 [s]
-acom $DSN/src/register_b.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\register_b.vhd
-# Compile Entity "register_b"
-# Entity `register_b' has been skipped - no difference detected.
-# Compile Architecture "behavioral" of Entity "register_b"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-acom $DSN/src/aluout.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\aluout.vhd
-# Compile Entity "aluout"
-# Compile Architecture "behavioral" of Entity "aluout"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-acom $DSN/src/TestBench/register_a_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\register_a_tb.vhd
-# Compile Entity "register_a_tb"
-# Entity `register_a_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "register_a_tb"
-# Error: COMP96_0015: register_a_tb.vhd : (44, 9): ';' expected.
-# Compile failure 1 Errors 0 Warnings  Analysis time :  0.0 [s]
-acom $DSN/src/TestBench/register_a_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\register_a_tb.vhd
-# Compile Entity "register_a_tb"
-# Entity `register_a_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "register_a_tb"
-# Error: COMP96_0015: register_a_tb.vhd : (43, 9): ';' expected.
-# Error: COMP96_0019: register_a_tb.vhd : (43, 9): Keyword "end" expected.
-# Error: COMP96_0019: register_a_tb.vhd : (44, 9): Keyword "end" expected.
-# Error: COMP96_0016: register_a_tb.vhd : (44, 14): Design unit declaration expected.
-# Error: COMP96_0018: register_a_tb.vhd : (65, 17): Identifier expected.
-# Compile failure 5 Errors 0 Warnings  Analysis time :  0.0 [s]
-asim aluout_tb behavior
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: Entity 'aluout' instantiated in the architecture 'behavior' was compiled after the compilation of this architecture.
-# ELBREAD: Error: Incompatible interface in direct instantiation. Region: /aluout_tb/DUT
-# ELBREAD: Error: Elaboration process completed with errors.
-# Design: Error: Elaboration failed
-# Error: asim: cannot select specified top-level
-acom $DSN/src/TestBench/register_a_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\register_a_tb.vhd
-# Compile Entity "register_a_tb"
-# Entity `register_a_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "register_a_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-acom $DSN/src/TestBench/register_a_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\register_a_tb.vhd
-# Compile Entity "register_a_tb"
-# Entity `register_a_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "register_a_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
-# Design: Design design0 already active.
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
+# File: c:\My_Designs\design3\design0\src\Memory.vhd
+# Compile Entity "Memory"
+# Entity `Memory' has been skipped - no difference detected.
+# Compile Architecture "behavioral" of Entity "Memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.3 [s]
 asim register_a_tb behavior
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
@@ -85,27 +21,48 @@ asim register_a_tb behavior
 # ELAB2: Elaboration final pass complete - time: 0.3 [s].
 # KERNEL: Kernel process initialization done.
 # Allocation: Simulator allocated 2423 kB (elbread=1070 elab2=304 kernel=1049 sdf=0)
-# 12:44 AM, Thursday, April 24, 2025
+# 12:58 AM, Saturday, April 26, 2025
 # Simulation has been initialized
 # Selected Top-Level: register_a_tb (behavior)
 run 100ns
 # EXECUTION:: NOTE   : register_a_tb completed successfully.
 # EXECUTION:: Time: 50 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
 # KERNEL: stopped at time: 100 ns
-acom $DSN/src/TestBench/register_b_tb.vhd
-# Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\register_b_tb.vhd
-# Compile Entity "register_b_tb"
-# Entity `register_b_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "register_b_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
 endsim
 # All when statements cleared.
 # Simulation has been stopped
-acom $DSN/src/TestBench/aluout_tb.vhd
+acom $DSN/src/Memory.vhd
 # Compile...
-# File: c:\My_Designs\design3\design0\src\TestBench\aluout_tb.vhd
-# Compile Entity "aluout_tb"
-# Entity `aluout_tb' has been skipped - no difference detected.
-# Compile Architecture "behavior" of Entity "aluout_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
+# File: c:\My_Designs\design3\design0\src\Memory.vhd
+# Compile Entity "Memory"
+# Entity `Memory' has been skipped - no difference detected.
+# Compile Architecture "behavioral" of Entity "Memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim memory_tb behavior
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 3774 kB (elbread=1070 elab2=1527 kernel=1177 sdf=0)
+# 12:59 AM, Saturday, April 26, 2025
+# Simulation has been initialized
+# Selected Top-Level: memory_tb (behavior)
+run 100ns
+# KERNEL: stopped at time: 100 ns
+run 100ns
+# EXECUTION:: NOTE   : Simulation completed successfully. All tests passed.
+# EXECUTION:: Time: 120 ns,  Iteration: 0,  TOP instance,  Process: stim_proc.
+# KERNEL: stopped at time: 200 ns
+endsim
+# All when statements cleared.
+# Simulation has been stopped
