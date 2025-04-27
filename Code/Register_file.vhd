@@ -18,24 +18,26 @@ entity Register_file is
 end entity ;
 
 architecture behavioral of Register_file is
-type reg_array is array (0 to 31 ) of std_logic_vector(31 downto 0);
-signal reg : reg_array := (others => (others => '0'));
-
-
+    -- Register array: 32 registers (32-bit each) 
+    type reg_array is array (0 to 31) of std_logic_vector(31 downto 0);
+    signal reg : reg_array := (others => (others => '0'));
 begin 
-	process(clk)
-	begin
-		if reset = '1' then 
-			reg <= (others => (others => '0'));
-		elsif rising_edge(clk) then
-			if reg_write ='1' and write_reg /= "00000" then	 --prevent writing at register 0
-			reg(to_integer(unsigned(write_reg))) <= write_data;
-			end if;
-		end if;
-	end process;
-	
-	reg1_data <=  reg(to_integer(unsigned(address_1)));
-	reg2_data <=  reg(to_integer(unsigned(address_2)));
-		
-end architecture ;
+    -- Synchronous write process (on rising edge of clk) 
+    process(clk)
+    begin
+        if reset = '1' then 
+            reg <= (others => (others => '0')); -- Reset all registers to 0 	 
+        elsif rising_edge(clk) then
+            if reg_write = '1' and write_reg /= "00000" then -- Prevent writing to register 0 
+                reg(to_integer(unsigned(write_reg))) <= write_data;
+            end if;
+        end if;
+    end process;
+    
+    -- Asynchronous read 
+    reg1_data <= reg(to_integer(unsigned(address_1)));
+    reg2_data <= reg(to_integer(unsigned(address_2)));
+        
+end architecture;
+
   

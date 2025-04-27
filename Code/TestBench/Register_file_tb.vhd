@@ -90,6 +90,22 @@ begin
         assert reg2_data_tb = x"12345678"
         report " Error: Register 2 read incorrect"
         severity error;
+		
+		
+		-- Attempt to write 0xFFFFFFFF into register 0
+        write_reg_tb <= "00000";      -- Address 0
+        write_data_tb <= x"FFFFFFFF"; -- Data to write
+        reg_write_tb <= '1';
+        wait for clk_period;
+        reg_write_tb <= '0';
+
+        -- Read back from register 0 -> reg1_data
+        address_1_tb <= "00000";
+        wait for clk_period;
+
+        assert reg1_data_tb = x"00000000"
+        report "Error: Register 0 was modified! It should always be zero."
+        severity error;
 
         -- Final note
         report " Simulation completed successfully. All tests passed." severity note;
