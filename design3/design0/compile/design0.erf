@@ -1,5 +1,0 @@
-MESSAGE "File: c:\My_Designs\design3\design0\src\Register_file.vhd" 
-MESSAGE "Compile Entity "Register_file"" 
-MESSAGE "Entity `Register_file' has been skipped - no difference detected." 
-MESSAGE "Compile Architecture "behavioral" of Entity "Register_file"" 
-SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]" 
