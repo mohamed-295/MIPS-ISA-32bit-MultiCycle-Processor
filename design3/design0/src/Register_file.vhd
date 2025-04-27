@@ -26,9 +26,9 @@ begin
 	process(clk)
 	begin
 		if reset = '1' then 
-			reg(to_integer(unsigned(write_reg))) <= (others => '0');
+			reg <= (others => (others => '0'));
 		elsif rising_edge(clk) then
-			if reg_write ='1' then
+			if reg_write ='1' and write_reg /= "00000" then	 --prevent writing at register 0
 			reg(to_integer(unsigned(write_reg))) <= write_data;
 			end if;
 		end if;

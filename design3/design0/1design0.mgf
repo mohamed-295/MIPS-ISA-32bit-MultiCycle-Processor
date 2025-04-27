@@ -1486,7 +1486,7 @@ V 000049 55 2870          1745270659864 behavior
   (_model . behavior 2 -1
   )
 )
-V 000051 55 3208          1745272071769 behavioral
+I 000051 55 3208          1745272071769 behavioral
 (_unit VHDL (register_file 0 5 (behavioral 0 20 ))
   (_version v33)
   (_time 1745272071769 2025.04.21 23:47:51)
@@ -2494,5 +2494,57 @@ V 000051 55 8090          1745618343064 behavioral
   (_split (7)
   )
   (_model . behavioral 2 -1
+  )
+)
+V 000051 55 5210          1745780679971 behavioral
+(_unit VHDL (register_file 0 5 (behavioral 0 20 ))
+  (_version v33)
+  (_time 1745780679971 2025.04.27 22:04:39)
+  (_source (\./src/Register_file.vhd\))
+  (_use (std(standard))(ieee(numeric_std))(ieee(std_logic_1164)))
+  (_parameters dbg )
+  (_entity
+    (_time 1745272071763)
+    (_use )
+  )
+  (_object
+    (_port (_internal clk ~extieee.std_logic_1164.std_logic 0 6 (_entity (_in )(_active)(_lastactive)(_event)(_lastevent)(_edge))))
+    (_port (_internal reset ~extieee.std_logic_1164.std_logic 0 7 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{4~downto~0}~12 0 9 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 4)(i 0))))))
+    (_port (_internal write_reg ~std_logic_vector{4~downto~0}~12 0 9 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{4~downto~0}~122 0 10 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 4)(i 0))))))
+    (_port (_internal address_1 ~std_logic_vector{4~downto~0}~122 0 10 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{4~downto~0}~124 0 11 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 4)(i 0))))))
+    (_port (_internal address_2 ~std_logic_vector{4~downto~0}~124 0 11 (_entity (_in ))))
+    (_port (_internal reg_write ~extieee.std_logic_1164.std_logic 0 13 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~12 0 14 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal write_data ~std_logic_vector{31~downto~0}~12 0 14 (_entity (_in ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~126 0 16 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal reg1_data ~std_logic_vector{31~downto~0}~126 0 16 (_entity (_out ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~128 0 17 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_port (_internal reg2_data ~std_logic_vector{31~downto~0}~128 0 17 (_entity (_out ))))
+    (_type (_internal ~std_logic_vector{31~downto~0}~13 0 21 (_array ~extieee.std_logic_1164.std_logic ((_downto (i 31)(i 0))))))
+    (_type (_internal reg_array 0 21 (_array ~std_logic_vector{31~downto~0}~13 ((_to (i 0)(i 31))))))
+    (_signal (_internal reg reg_array 0 22 (_architecture (_uni ((_others(_others(i 2))))))))
+    (_process
+      (line__26(_architecture 0 0 26 (_process (_simple)(_target(9))(_sensitivity(0))(_read(2)(1)(6)(5)))))
+      (line__37(_architecture 1 0 37 (_assignment (_simple)(_target(7))(_sensitivity(9)(3)))))
+      (line__38(_architecture 2 0 38 (_assignment (_simple)(_target(8))(_sensitivity(9)(4)))))
+    )
+    (_subprogram
+      (_external resolved (ieee std_logic_1164 0))
+    )
+    (_type (_external ~extieee.std_logic_1164.std_logic (ieee std_logic_1164 std_logic)))
+    (_type (_external ~extieee.std_logic_1164.std_ulogic (ieee std_logic_1164 std_ulogic)))
+    (_type (_external ~extieee.std_logic_1164.std_logic_vector (ieee std_logic_1164 std_logic_vector)))
+    (_type (_external ~extieee.numeric_std.UNSIGNED (ieee numeric_std UNSIGNED)))
+  )
+  (_split (9)
+  )
+  (_static
+    (2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 )
+    (2 2 2 2 2 )
+  )
+  (_model . behavioral 3 -1
   )
 )

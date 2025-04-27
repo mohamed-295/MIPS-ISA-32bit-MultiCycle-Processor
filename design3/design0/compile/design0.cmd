@@ -1,1 +1,1 @@
--w -s "c:\My_Designs\design3\library.cfg"  -j "c:\My_Designs\design3\design0\projlib.cfg"  -d "c:\My_Designs\design3\design0\compile\"  -work design0 -dbg -e 100 "c:\My_Designs\design3\design0\src\Memory.vhd" 
+-w -s "c:\My_Designs\design3\library.cfg"  -j "c:\My_Designs\design3\design0\projlib.cfg"  -d "c:\My_Designs\design3\design0\compile\"  -work design0 -dbg -e 100 "c:\My_Designs\design3\design0\src\Register_file.vhd" 
