@@ -44,9 +44,9 @@ begin
     begin
         -- Initial reset
         wait for 20 ns;
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
 
         -- Enable write, input 1
         en_tb <= '1';
@@ -63,9 +63,9 @@ begin
         wait for clk_period;
 
         -- Apply reset again
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
 
         wait;
     end process;

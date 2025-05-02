@@ -16,7 +16,7 @@ begin
 	
 	process(clk)
 	begin
-		if reset = '1' then
+		if reset = '0' then
 			ir<= (others =>'0');
 		elsif (rising_edge(clk) and (ir_write='1')) then
 			ir <= ir_in;

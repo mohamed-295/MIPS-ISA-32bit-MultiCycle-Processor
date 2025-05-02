@@ -25,7 +25,7 @@ begin
     -- Synchronous write process (on rising edge of clk) 
     process(clk)
     begin
-        if reset = '1' then 
+        if reset = '0' then 
             reg <= (others => (others => '0')); -- Reset all registers to 0 	 
         elsif rising_edge(clk) then
             if reg_write = '1' and write_reg /= "00000" then -- Prevent writing to register 0 

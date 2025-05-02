@@ -44,9 +44,9 @@ begin
     begin
         wait for 20 ns;
 
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
 
         -- Test 1
         address_tb <= x"00000000";

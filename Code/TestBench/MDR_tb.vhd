@@ -43,9 +43,9 @@ begin
         wait for 20 ns;
 
         -- Apply reset
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
 
         -- Apply input value and check after clock edge
         MDR_in_tb <= x"DEADBEEF";
@@ -64,9 +64,9 @@ begin
         severity error;
 
         -- Apply reset again
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
 
         assert MDR_out_tb = x"00000000"
         report "Error: MDR not cleared after reset"

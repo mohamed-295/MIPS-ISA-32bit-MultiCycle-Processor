@@ -18,7 +18,7 @@ architecture behavior of Instruction_register_tb is
 begin
 
     -- DUT instantiation
-    DUT: entity work.Instruction_register
+    DUT: entity Instruction_register
         port map (
             clk      => clk_tb,
             reset    => reset_tb,
@@ -45,9 +45,9 @@ begin
         wait for 20 ns;
 
         -- Test 1: Apply reset
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
         wait for clk_period;
 
         assert ir_out_tb = x"00000000"
@@ -77,9 +77,9 @@ begin
             report "IR changed when ir_write was low!" severity error;
 
         -- Test 5: Apply reset again
-        reset_tb <= '1';
-        wait for clk_period;
         reset_tb <= '0';
+        wait for clk_period;
+        reset_tb <= '1';
         wait for clk_period;
 
         assert ir_out_tb = x"00000000"

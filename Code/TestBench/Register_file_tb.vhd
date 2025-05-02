@@ -53,10 +53,10 @@ begin
         wait for 20 ns;
 
         -- Reset
-        reset_tb <= '1';
+        reset_tb <= '0';
         write_reg_tb <= "00001";
         wait for clk_period;
-        reset_tb <= '0';
+        reset_tb <= '1';
 
         -- Write 0xAAAA5555 into register 1
         write_reg_tb <= "00001";

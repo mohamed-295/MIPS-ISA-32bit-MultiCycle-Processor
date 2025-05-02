@@ -40,9 +40,9 @@ begin
         wait for 20 ns;
 		
 		data_in_tb <= x"AAAA5555";
-		reset_tb <='1';
-        wait for clk_period;
 		reset_tb <='0';
+        wait for clk_period;
+		reset_tb <='1';
 		
 		assert data_out_tb = x"00000000"
         report "Error: Output mismatch after writing 00000000"

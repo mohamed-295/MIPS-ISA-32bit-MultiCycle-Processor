@@ -16,7 +16,7 @@ begin
 	
 	process (clk)
 		begin
-			if reset = '1' then
+			if reset = '0' then
 				mem_data <= (others => '0');
 			elsif rising_edge(clk) then
 				mem_data <= MDR_in;

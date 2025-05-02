@@ -17,7 +17,7 @@ begin
 	
 	process(clk)
 	begin
-		if reset='1' then
+		if reset='0' then
 			reg_b <= (others =>'0');
 		elsif rising_edge(clk) then
             reg_b <= data_in;

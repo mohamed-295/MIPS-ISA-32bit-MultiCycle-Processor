@@ -75,7 +75,7 @@ begin
 	-- Write process: stores each byte of the word 
 	process(clk,reset)
 	begin
-		--if reset = '1' then
+		--if reset = '0' then
 			--memory <= (others => (others => '0'));
 		if (rising_edge(clk) and (mem_write='1')) then
 			memory(to_integer(unsigned(address))) 		<= write_data(31 downto 24);
