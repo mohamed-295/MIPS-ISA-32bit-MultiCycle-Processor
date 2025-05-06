@@ -68,5 +68,5 @@ begin
 	
 	PC_enable <= PCWrite_internal or ( PCWriteCond_internal and zero );
 	
-end architecture;
+end Architecture ;
 	
