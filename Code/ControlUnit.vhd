@@ -4,14 +4,14 @@ use ieee.std_logic_1164.all;
 Entity ControlUnit is 
 	port( 
 	-- inputs
-	clk, rst, zero: IN std_ulogic;
-	opcode: IN std_ulogic_vector (5 downto 0);	
-	instruc_15to0: IN std_ulogic_vector (15 downto 0);
+	clk, rst, zero: IN std_logic;
+	opcode: IN std_logic_vector (5 downto 0);	
+	instruc_15to0: IN std_logic_vector (15 downto 0);
 	-- outputs
-	ALUopcode: OUT std_ulogic_vector (2 downto 0);
-	IorD, MemRead, MemWrite, MemtoReg, IRWrite, ALUSrcA, RegWrite, RegDst: OUT std_ulogic;
-	PCSource, ALUSrcB: OUT std_ulogic_vector (1 downto 0);  
-	PC_enable: OUT std_ulogic
+	ALUopcode: OUT std_logic_vector (2 downto 0);
+	IorD, MemRead, MemWrite, MemtoReg, IRWrite, ALUSrcA, RegWrite, RegDst: OUT std_logic;
+	PCSource, ALUSrcB: OUT std_logic_vector (1 downto 0);  
+	PC_enable: OUT std_logic
 	);									 
 End entity;	 
 
@@ -19,23 +19,23 @@ Architecture Behavioral of ControlUnit is
 
 component ControlFSM 
 	port(
-	clk, rst: IN std_ulogic;  
-	opcode: IN std_ulogic_vector (5 downto 0);
-	PCWriteCond, PCWrite, IorD, MemRead, MemWrite, MemtoReg, IRWrite, ALUSrcA, RegWrite, RegDst: Out std_ulogic;
-	PCSource, ALUSrcB, ALUOp: out std_ulogic_vector (1 downto 0)
+	clk, rst: IN std_logic;  
+	opcode: IN std_logic_vector (5 downto 0);
+	PCWriteCond, PCWrite, IorD, MemRead, MemWrite, MemtoReg, IRWrite, ALUSrcA, RegWrite, RegDst: Out std_logic;
+	PCSource, ALUSrcB, ALUOp: out std_logic_vector (1 downto 0)
 	);
 End component;
 
 component ALUControl 
 	port(
-	instruc_15to0: IN std_ulogic_vector (15 downto 0);	
-	ALUOp:IN std_ulogic_vector (1 downto 0);
-	ALUopcode: OUT std_ulogic_vector (2 downto 0)
+	instruc_15to0: IN std_logic_vector (15 downto 0);	
+	ALUOp:IN std_logic_vector (1 downto 0);
+	ALUopcode: OUT std_logic_vector (2 downto 0)
 	);
 End component;
 
-signal ALUOp_internal: std_ulogic_vector (1 downto 0); 	 
-signal PCWrite_internal, PCWriteCond_internal: std_ulogic;
+signal ALUOp_internal: std_logic_vector (1 downto 0); 	 
+signal PCWrite_internal, PCWriteCond_internal: std_logic;
 
 begin
 	
