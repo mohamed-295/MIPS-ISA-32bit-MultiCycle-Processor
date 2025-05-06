@@ -14,34 +14,41 @@ entity ALU is
 end ALU;
 
 architecture behavior of ALU is
+signal temp : std_logic_vector(31 downto 0);
 begin
     process(A, B, ALUControl)
     begin
         case ALUControl is
             when "010" => -- ADD0
-                Result <= A + B;
+                temp <= A + B;
             when "110" => -- SUB
-                Result <= A - B;
+                temp <= A - B;
             when "000" => -- AND
-                Result <= A and B;
+                temp <= A and B;
             when "001" => -- OR
-                Result <= A or B;
+                temp <= A or B;
             when "111" => -- SLT (set on less than)
                 if (A < B) then
-                    Result <= (others => '0');
-                    Result(0) <= '1';
+                    temp <= (others => '0');
+                    temp(0) <= '1';
                 else
-                    Result <= (others => '0');
+                    temp <= (others => '0');
                 end if;
+			 when "011" => -- Shift Left (Logical)
+                temp <= A(30 downto 0) & '0';
 
+            when "100" => -- Shift Right (Logical)
+                temp <= '0' & A(31 downto 1);
             when others =>
-                Result <= (others => '0');
+                temp <= (others => '0');
         end case;
 
-        if Result = X"00000000" then
+        if temp = X"00000000" then
             Zero <= '1';
         else
             Zero <= '0';
         end if;
-    end process;
+
+    end process; 
+	result <= temp;
 end behavior;
