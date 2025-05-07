@@ -3,7 +3,9 @@ use ieee.std_logic_1164.all;
 
 ------start entity--------	   
 entity top_level is 
-	port(CLk, reset_neg : in std_logic);
+	port(
+		CLk, reset_neg : in std_logic
+	);
 end top_level;		   
 
 
@@ -14,8 +16,8 @@ architecture behavior of top_level is
 
 component ALU is
     Port (
-        A     : in  STD_LOGIC_VECTOR(31 downto 0);
-        B     : in  STD_LOGIC_VECTOR(31 downto 0);
+        A     	   : in  STD_LOGIC_VECTOR(31 downto 0);
+        B          : in  STD_LOGIC_VECTOR(31 downto 0);
         ALUControl : in  STD_LOGIC_VECTOR(2 downto 0); -- 3 bits for operations
         Result     : buffer STD_LOGIC_VECTOR(31 downto 0);
         Zero       : out STD_LOGIC
@@ -181,11 +183,57 @@ entity shiftleft2_32 is
 end component;
 
 
--- signals ( todo )	 
+------------ signals ------------
 
+-- 32_bit signals
+signal  pc_out,
+	    mux_to_address,
+	    mem_data_out,
+	    memory_data_register_out,
+		instruction_register_out,
+		mux_to_write_data,
+		read_data_1_to_A,
+		read_data_2_to_B,
+		A_to_mux, B_to_mux,
+		sign_extend_out,
+		shift_32_to_mux,
+		mux_to_alu,
+		alu_result_out,
+		alu_out_to_mux,
+		jumb_address,
+		mux_to_pc  : std_logic_vector(31 downto 0);	
+		
+-- 1_bit signals		
+signal  alu_zero,
+		alu_src_a,
+		reg_write,
+		reg_dst,
+		pc_write_cond,
+		pc_write,
+		i_or_d,
+		mem_read,
+		mem_write,
+		mem_to_reg,
+		ir_write,
+		and_to_or,
+		or_to_pc   : std_logic;
+
+-- 2_bit signals
+signal  pc_source,
+		alu_src_b,
+		alu_op,	   : std_logic_vector(1 downto 0);
+
+-- 4_bit signals
+signal alu_control_to_alu : std_logic_vector(3 downto 0);
+
+-- 5_bit signals
+signal mux_to_write_register : std_logic(4 downto 0);
+
+					 
 
 begin
 
+-- handle AND & OR ( todo )	
 -- connections ( todo )
 
 
