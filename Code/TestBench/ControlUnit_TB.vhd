@@ -10,41 +10,41 @@ ARCHITECTURE behavior OF tb_ControlUnit IS
     -- Component Declaration
     COMPONENT ControlUnit
         PORT(
-            clk, rst, zero: IN std_ulogic;
-            opcode: IN std_ulogic_vector (5 downto 0);    
-            instruc_15to0: IN std_ulogic_vector (15 downto 0);
-            ALUopcode: OUT std_ulogic_vector (2 downto 0);
+            clk, rst, zero: IN std_logic;
+            opcode: IN std_logic_vector (5 downto 0);    
+            instruc_15to0: IN std_logic_vector (15 downto 0);
+            ALUopcode: OUT std_logic_vector (2 downto 0);
             IorD, MemRead, MemWrite, MemtoReg, IRWrite, ALUSrcA, RegWrite, RegDst: OUT std_ulogic;
-            PCSource, ALUSrcB: OUT std_ulogic_vector (1 downto 0);  
-            PC_enable: OUT std_ulogic
+            PCSource, ALUSrcB: OUT std_logic_vector (1 downto 0);  
+            PC_enable: OUT std_logic
         );
     END COMPONENT;
 
     -- Signals to connect to the Unit Under Test (UUT)
-    SIGNAL clk_tb     : std_ulogic := '0';
-    SIGNAL rst_tb     : std_ulogic := '1';
-    SIGNAL zero_tb    : std_ulogic := '0';
-    SIGNAL opcode_tb  : std_ulogic_vector(5 downto 0) := (others => '0');
-    SIGNAL instr_tb   : std_ulogic_vector(15 downto 0) := (others => '0');
+    SIGNAL clk_tb     : std_logic := '0';
+    SIGNAL rst_tb     : std_logic := '1';
+    SIGNAL zero_tb    : std_logic := '0';
+    SIGNAL opcode_tb  : std_logic_vector(5 downto 0) := (others => '0');
+    SIGNAL instr_tb   : std_logic_vector(15 downto 0) := (others => '0');
 
-    SIGNAL ALUopcode_tb       : std_ulogic_vector(2 downto 0);
-    SIGNAL IorD_tb            : std_ulogic;
-    SIGNAL MemRead_tb         : std_ulogic;
-    SIGNAL MemWrite_tb        : std_ulogic;
-    SIGNAL MemtoReg_tb        : std_ulogic;
-    SIGNAL IRWrite_tb         : std_ulogic;
-    SIGNAL ALUSrcA_tb         : std_ulogic;
-    SIGNAL RegWrite_tb        : std_ulogic;
-    SIGNAL RegDst_tb          : std_ulogic;
-    SIGNAL PCSource_tb        : std_ulogic_vector(1 downto 0);
-    SIGNAL ALUSrcB_tb         : std_ulogic_vector(1 downto 0);
-    SIGNAL PC_enable_tb       : std_ulogic;	   
+    SIGNAL ALUopcode_tb       : std_logic_vector(2 downto 0);
+    SIGNAL IorD_tb            : std_logic;
+    SIGNAL MemRead_tb         : std_logic;
+    SIGNAL MemWrite_tb        : std_logic;
+    SIGNAL MemtoReg_tb        : std_logic;
+    SIGNAL IRWrite_tb         : std_logic;
+    SIGNAL ALUSrcA_tb         : std_logic;
+    SIGNAL RegWrite_tb        : std_logic;
+    SIGNAL RegDst_tb          : std_logic;
+    SIGNAL PCSource_tb        : std_logic_vector(1 downto 0);
+    SIGNAL ALUSrcB_tb         : std_logic_vector(1 downto 0);
+    SIGNAL PC_enable_tb       : std_logic;	   
 	CONSTANT clk_period : time := 10 ns;
 
 BEGIN
 
     -- Instantiate the Unit Under Test (UUT)
-    uut: ControlUnit
+uut: ControlUnit
         PORT MAP (
             clk => clk_tb,
             rst => rst_tb,

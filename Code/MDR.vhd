@@ -14,7 +14,7 @@ signal mem_data : std_logic_vector (31 downto 0);
 
 begin
 	
-	process (clk)
+	process (clk,MDR_in)
 		begin
 			if reset = '0' then
 				mem_data <= (others => '0');

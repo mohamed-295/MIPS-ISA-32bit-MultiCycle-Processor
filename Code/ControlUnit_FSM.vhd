@@ -69,7 +69,7 @@ begin
 			elsif opcode = JUMP then
 				NxtState <= JumpCompletion;	 
 			else 
-				NxtState <= Error;
+				NxtState <= InstructionFetch;
 			end if;	
 			
 			--Memory Address Computation
@@ -80,7 +80,7 @@ begin
 			elsif opcode = STOREWORD then
 				NxtState <= MemAccessStore;
 			else 
-				NxtState <= Error;	
+				NxtState <= InstructionFetch;	
 			end if;
 			
 			--Memory Access Load word
@@ -112,7 +112,7 @@ begin
 			NxtState <= InstructionFetch;
 			
 			when others =>
-			NxtState <= Error;	 
+			NxtState <= InstructionFetch;	 
 		end case; 
 	end process;
 		
@@ -166,7 +166,7 @@ begin
 		MemRead <= Control_signals(12);
 		MemWrite <= Control_signals(11);
 		MemtoReg <= Control_signals(10);
-	    	IRWrite <= Control_signals(9);
+	    IRWrite <= Control_signals(9);
 		ALUSrcA <= Control_signals(8);
 		RegWrite <= Control_signals(7);
 		RegDst <= Control_signals(6);
