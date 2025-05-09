@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 ------start entity--------	   
 entity top_level is 
 	port(
-		CLk, reset_neg : in std_logic
+		clk, reset : in std_logic
 	);
 end top_level;		   
 
@@ -44,28 +44,6 @@ component ControlUnit is
 	PC_enable: OUT std_logic
 	);									 
 end component;	
----------------------------------------
-component ALUControl is 
-	port( 
-	-- inputs
-	instruc_15to0: IN std_logic_vector (15 downto 0);	
-	ALUOp:IN std_logic_vector (1 downto 0);
-	-- outputs 
-	ALUopcode: OUT std_logic_vector (2 downto 0)
-	);
-end component;	  
------------------------------------------ 
-component ControlFSM is 
-	port( 
-	-- inputs
-	clk, rst: IN std_logic;
-	opcode: IN std_logic_vector (5 downto 0);
-	
-	-- outputs(Control signals)
-	PCWriteCond, PCWrite, IorD, MemRead, MemWrite, MemtoReg, IRWrite, ALUSrcA, RegWrite, RegDst: OUT std_logic;
-	PCSource, ALUSrcB, ALUOp: OUT std_logic_vector (1 downto 0)
-	);
-end component;	 
 -----------------------------------------
 component Instruction_register is
     Port ( 	clk 		: in std_logic;
@@ -94,7 +72,17 @@ component Memory is
 			mem_data	: out std_logic_vector(31 downto 0));
 end component ;	
 ------------------------------------------
-component MUX2 is
+component MUX2_32 is
+	generic  (n: integer := 32);
+	port(
+	input_1 : in std_logic_vector(n-1 downto 0);
+	input_2 : in std_logic_vector(n-1 downto 0);
+	mux_sel : in std_logic;
+	output : out std_logic_vector(n-1 downto 0)
+	);
+end component;
+------------------------------------------
+component MUX2_5 is
 	generic  (n: integer := 32);
 	port(
 	input_1 : in std_logic_vector(n-1 downto 0);
@@ -175,7 +163,7 @@ component shiftleft2_28 is
         output : out std_logic_vector(27 downto 0) );
 end component;	   
 --------------------------------------------
-entity shiftleft2_32 is
+component shiftleft2_32 is
 	port (
 	input: in STD_LOGIC_VECTOR(31 downto 0);
 	output: out STD_LOGIC_VECTOR(31 downto 0)
@@ -194,10 +182,12 @@ signal  pc_out,
 		mux_to_write_data,
 		read_data_1_to_A,
 		read_data_2_to_B,
-		A_to_mux, B_to_mux,
+		A_to_mux,
+		B_to_mux,
 		sign_extend_out,
 		shift_32_to_mux,
 		mux_to_alu,
+		mux_4_to_alu,
 		alu_result_out,
 		alu_out_to_mux,
 		jumb_address,
@@ -208,33 +198,117 @@ signal  alu_zero,
 		alu_src_a,
 		reg_write,
 		reg_dst,
-		pc_write_cond,
-		pc_write,
 		i_or_d,
 		mem_read,
 		mem_write,
 		mem_to_reg,
 		ir_write,
-		and_to_or,
-		or_to_pc   : std_logic;
+		pc_en	   : std_logic;
 
 -- 2_bit signals
 signal  pc_source,
 		alu_src_b,
-		alu_op,	   : std_logic_vector(1 downto 0);
+		alu_op	   : std_logic_vector(1 downto 0);
 
 -- 4_bit signals
-signal alu_control_to_alu : std_logic_vector(3 downto 0);
+signal alu_control_to_alu : std_logic_vector(2 downto 0);
 
 -- 5_bit signals
-signal mux_to_write_register : std_logic(4 downto 0);
+signal mux_to_write_register : std_logic_vector(4 downto 0);
 
 					 
 
 begin
 
--- handle AND & OR ( todo )	
 -- connections ( todo )
+jumb_address(31 downto 28) <= pc_out(31 downto 28);
 
+---------- ALU -----------
+logic_unit : ALU 
+	port map (
+	A 			=> mux_to_alu,
+	B 			=> mux_4_to_alu,
+	ALUControl 	=> alu_control_to_alu,
+	Result   	=> alu_result_out,
+    Zero       	=> alu_zero
+	);
+-------- Control unit (Control_FSM & ALU_control) ------
+control_unit : ControlUnit
+	port map (
+	clk 			=> clk,
+	zero			=> alu_zero,
+	rst				=> reset,
+	opcode			=> instruction_register_out(31 downto 26),
+	instruc_15to0	=> instruction_register_out(15 downto 0),
+	ALUopcode		=> alu_control_to_alu,
+	IorD			=> i_or_d,
+	MemRead			=> mem_read,
+	MemWrite		=> mem_write,
+	MemtoReg		=> mem_to_reg,
+	IRWrite			=> ir_write,
+	ALUSrcA			=> alu_src_a,
+	RegWrite		=> reg_write,
+	RegDst			=> reg_dst,
+	PCSource		=> pc_source,
+	ALUSrcB			=> alu_src_b,
+	PC_enable		=> pc_en
+	);
+------------ Instruction register ------------	
+ir : Instruction_register
+	port map (
+	clk 		=> clk,
+	reset		=> reset,
+	ir_write	=> ir_write,
+	ir_in 		=> mem_data_out,
+	ir_out	   	=> instruction_register_out
+	);
+------------------ Memory --------------------
+mem: Memory 
+	port map (
+	clk 		=> clk,
+	reset		=> reset,
+	mem_write	=> mem_write,	 
+	mem_read	=> mem_read,
+	address		=> mux_to_address,
+	write_data 	=> B_to_mux,
+	mem_data	=> mem_data_out
+	);
+-------- MDR ( Memory Data Register ) -------
+mem_data_register : MDR
+	port map (
+	clk 	=> clk,
+	reset 	=> reset,
+	MDR_in	=> memory_data_register_out,
+	MDR_out => mem_data_out
+	);
+---------- mux 1 -> 6 ( to do ) -------------
+
+---------- PC ( Program Counter ) -----------
+pc : ProgramCounter
+	port map (
+	clk 	=> clk,
+	en  	=> pc_en,
+	reset 	=> reset,
+	input 	=> mux_to_pc,
+	output 	=> pc_out
+	); 
+
+---------------- Registers ------------------
+
+-------------- sign extend ------------------
+sign_extend : sign_ext
+	port map (
+	sign_input  => instruction_register_out(15 downto 0),
+	sign_output => sign_extend_out
+	);
+
+-------------- shift left 2 (32) -----------------
+sl3_32 : shiftleft2_32
+	port map (
+	input  => sign_extend_out,
+	output => shift_32_to_mux
+	);
+
+-------------- shift left 2 (28) -----------------
 
 end behavior;
