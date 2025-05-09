@@ -83,7 +83,7 @@ component MUX2_32 is
 end component;
 ------------------------------------------
 component MUX2_5 is
-	generic  (n: integer := 32);
+	generic  (n: integer := 5);
 	port(
 	input_1 : in std_logic_vector(n-1 downto 0);
 	input_2 : in std_logic_vector(n-1 downto 0);
@@ -216,6 +216,7 @@ signal alu_control_to_alu : std_logic_vector(2 downto 0);
 -- 5_bit signals
 signal mux_to_write_register : std_logic_vector(4 downto 0);
 
+constant pc_increment : std_logic_vector(31 downto 0) := "00000000000000000000000000000100";
 					 
 
 begin
@@ -282,7 +283,57 @@ mem_data_register : MDR
 	MDR_out => mem_data_out
 	);
 ---------- mux 1 -> 6 ( to do ) -------------
+mux1 : MUX2_32
+	port map(
+	input_1 => pc_out,
+	input_2 => alu_out_to_mux,
+	mux_sel => i_or_d,
+	output 	=> mux_to_address
+	);
+	
+mux2 : MUX2_5
+	port map(
+	input_1 => instruction_register_out(20 downto 16),
+	input_2 => instruction_register_out(15 downto 11),
+	mux_sel => reg_dst,
+	output  => mux_to_write_register
+	);
 
+mux3 : MUX2_32
+	port map (
+	input_1 => memory_data_register_out,
+	input_2 => alu_out_to_mux,
+	mux_sel => mem_to_reg,
+	output  => mux_to_write_data
+	);
+
+mux4 : MUX2_32
+	port map (
+	input_1 => pc_out,
+	input_2	=> A_to_mux,
+	mux_sel	=> alu_src_a,
+	output	=> mux_to_alu
+	);
+
+mux5 : MUX4_32
+	port map (
+	input_1 => B_to_mux,
+	input_2 => pc_increment,
+	input_3 => sign_extend_out,
+	input_4 => shift_32_to_mux,
+	mux_sel => alu_src_b,
+	output  => mux_4_to_alu
+	);
+	
+mux6 : MUX3_32 
+	port map(
+	input_1 => alu_result_out,
+	input_2 => alu_out_to_mux,
+	input_3 => jumb_address,
+	mux_sel => pc_source,
+	output  => mux_to_pc
+	);	
+	
 ---------- PC ( Program Counter ) -----------
 pc : ProgramCounter
 	port map (
@@ -294,7 +345,34 @@ pc : ProgramCounter
 	); 
 
 ---------------- Registers ------------------
-
+reg_file : Register_file
+	port map (
+	clk			=> clk,
+	reset		=> reset,
+	write_reg	=> mux_to_write_register,
+	address_1	=> instruction_register_out(25 downto 21),
+	address_2 	=> instruction_register_out(20 downto 16),
+	reg_write  	=> reg_write,
+	write_data 	=> mux_to_write_data,
+	reg1_data 	=> read_data_1_to_A,
+	reg2_data 	=> read_data_2_to_B
+	);
+	
+reg_a : register_a  
+	port map(
+	clk		=> clk,
+	reset 	=> reset,
+	data_in	=> read_data_1_to_A,
+	data_out=> A_to_mux
+	);
+	
+reg_b : register_b  
+	port map(
+	clk		=> clk,
+	reset 	=> reset,
+	data_in	=> read_data_2_to_b,
+	data_out=> B_to_mux
+	);	
 -------------- sign extend ------------------
 sign_extend : sign_ext
 	port map (
@@ -303,12 +381,17 @@ sign_extend : sign_ext
 	);
 
 -------------- shift left 2 (32) -----------------
-sl3_32 : shiftleft2_32
+sl2_32 : shiftleft2_32
 	port map (
 	input  => sign_extend_out,
 	output => shift_32_to_mux
 	);
 
 -------------- shift left 2 (28) -----------------
-
+sl2_28 : shiftleft2_28 
+ 	port map(
+ 	input  => instruction_register_out(25 downto 0),
+    output => jumb_address(27 downto 0)
+	);
+	
 end behavior;
