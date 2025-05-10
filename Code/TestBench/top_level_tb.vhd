@@ -35,9 +35,9 @@ begin
     clk_process : process
     begin
         while true loop
-            clk_tb <= '0';
-            wait for clk_period / 2;
             clk_tb <= '1';
+            wait for clk_period / 2;
+            clk_tb <= '0';
             wait for clk_period / 2;
         end loop;
     end process;
@@ -51,7 +51,7 @@ begin
         reset_tb <= '1';
 
         -- Run simulation
-        wait for 1500 ns;
+        wait for 2500 ns;
 
         -- Optionally stop the simulation
         assert false report "Simulation completed" severity failure;

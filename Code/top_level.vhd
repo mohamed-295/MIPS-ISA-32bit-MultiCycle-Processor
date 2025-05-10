@@ -303,8 +303,8 @@ mux_2 : MUX2
 mux_3 : MUX2
 	generic map( n=>32)
 	port map (
-	input_1 => alu_out_to_mux,
-	input_2 => memory_data_register_out,
+	input_1 => memory_data_register_out,
+	input_2 => alu_out_to_mux,
 	mux_sel => mem_to_reg,
 	output  => mux_to_write_data
 	);
