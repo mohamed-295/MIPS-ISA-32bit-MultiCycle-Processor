@@ -72,7 +72,7 @@ component Memory is
 			mem_data	: out std_logic_vector(31 downto 0));
 end component ;	
 ------------------------------------------
-component MUX2_32 is
+component MUX2 is
 	generic  (n: integer := 32);
 	port(
 	input_1 : in std_logic_vector(n-1 downto 0);
@@ -81,16 +81,6 @@ component MUX2_32 is
 	output : out std_logic_vector(n-1 downto 0)
 	);
 end component;
-------------------------------------------
-component MUX2_5 is
-	generic  (n: integer := 5);
-	port(
-	input_1 : in std_logic_vector(n-1 downto 0);
-	input_2 : in std_logic_vector(n-1 downto 0);
-	mux_sel : in std_logic;
-	output : out std_logic_vector(n-1 downto 0)
-	);
-end component; 
 -------------------------------------------
 component MUX3_32 is
 	port(
@@ -173,8 +163,9 @@ end component;
 
 ------------ signals ------------
 
--- 32_bit signals
-signal  pc_out,
+-- 32_bit signals 
+signal 	pc_out  : std_logic_vector(31 downto 0) := (others =>'0');
+signal  
 	    mux_to_address,
 	    mem_data_out,
 	    memory_data_register_out,
@@ -233,6 +224,14 @@ logic_unit : ALU
 	Result   	=> alu_result_out,
     Zero       	=> alu_zero
 	);
+---------- ALU Out Register -----------
+alu_out_reg : aluout 
+	port map (
+	clk			=> clk,
+	reset		=> reset,
+	data_in		=> alu_result_out,
+	data_out	=> alu_out_to_mux
+	);
 -------- Control unit (Control_FSM & ALU_control) ------
 control_unit : ControlUnit
 	port map (
@@ -279,11 +278,12 @@ mem_data_register : MDR
 	port map (
 	clk 	=> clk,
 	reset 	=> reset,
-	MDR_in	=> memory_data_register_out,
-	MDR_out => mem_data_out
+	MDR_in	=>  mem_data_out,
+	MDR_out =>memory_data_register_out
 	);
 ---------- mux 1 -> 6 ( to do ) -------------
-mux1 : MUX2_32
+mux_1 : MUX2
+	generic map( n=>32)
 	port map(
 	input_1 => pc_out,
 	input_2 => alu_out_to_mux,
@@ -291,7 +291,8 @@ mux1 : MUX2_32
 	output 	=> mux_to_address
 	);
 	
-mux2 : MUX2_5
+mux_2 : MUX2
+	generic map( n=>5)
 	port map(
 	input_1 => instruction_register_out(20 downto 16),
 	input_2 => instruction_register_out(15 downto 11),
@@ -299,15 +300,17 @@ mux2 : MUX2_5
 	output  => mux_to_write_register
 	);
 
-mux3 : MUX2_32
+mux_3 : MUX2
+	generic map( n=>32)
 	port map (
-	input_1 => memory_data_register_out,
-	input_2 => alu_out_to_mux,
+	input_1 => alu_out_to_mux,
+	input_2 => memory_data_register_out,
 	mux_sel => mem_to_reg,
 	output  => mux_to_write_data
 	);
 
-mux4 : MUX2_32
+mux_4 : MUX2
+	generic map( n=>32)
 	port map (
 	input_1 => pc_out,
 	input_2	=> A_to_mux,
@@ -315,7 +318,7 @@ mux4 : MUX2_32
 	output	=> mux_to_alu
 	);
 
-mux5 : MUX4_32
+mux_5 : MUX4_32
 	port map (
 	input_1 => B_to_mux,
 	input_2 => pc_increment,
@@ -325,7 +328,7 @@ mux5 : MUX4_32
 	output  => mux_4_to_alu
 	);
 	
-mux6 : MUX3_32 
+mux_6 : MUX3_32 
 	port map(
 	input_1 => alu_result_out,
 	input_2 => alu_out_to_mux,
@@ -348,7 +351,7 @@ pc : ProgramCounter
 reg_file : Register_file
 	port map (
 	clk			=> clk,
-	reset		=> reset,
+	reset		=> '1',
 	write_reg	=> mux_to_write_register,
 	address_1	=> instruction_register_out(25 downto 21),
 	address_2 	=> instruction_register_out(20 downto 16),
@@ -370,7 +373,7 @@ reg_b : register_b
 	port map(
 	clk		=> clk,
 	reset 	=> reset,
-	data_in	=> read_data_2_to_b,
+	data_in	=> read_data_2_to_B,
 	data_out=> B_to_mux
 	);	
 -------------- sign extend ------------------
