@@ -35,9 +35,9 @@ begin
     clk_process : process
     begin
         while true loop
-            clk_tb <= '0';
-            wait for clk_period / 2;
             clk_tb <= '1';
+            wait for clk_period / 2;
+            clk_tb <= '0';
             wait for clk_period / 2;
         end loop;
     end process;
