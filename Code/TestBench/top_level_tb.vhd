@@ -51,7 +51,7 @@ begin
         reset_tb <= '1';
 
         -- Run simulation
-        wait for 1500 ns;
+        wait for 2500 ns;
 
         -- Optionally stop the simulation
         assert false report "Simulation completed" severity failure;
