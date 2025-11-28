@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity register_b is 
+entity aluout is 
 	port (	clk		: in std_logic;
 			reset	: in std_logic;
 			data_in	: in std_logic_vector(31 downto 0);
@@ -9,20 +9,20 @@ entity register_b is
 end entity ;
 
 
-architecture behavioral	of register_b is
+architecture behavioral	of aluout is
 
-	signal reg_b : std_logic_vector(31 downto 0); 
+	signal reg_alu : std_logic_vector(31 downto 0); 
 
 begin 
 	
-	process(clk)
+	process(clk,reset)
 	begin
 		if reset='0' then
-			reg_b <= (others =>'0');
+			reg_alu <= (others =>'0');
 		elsif rising_edge(clk) then
-            reg_b <= data_in;
+            reg_alu <= data_in;
         end if;
     end process;
-    data_out <= reg_b;
+    data_out <= reg_alu;
 	
 end architecture ;

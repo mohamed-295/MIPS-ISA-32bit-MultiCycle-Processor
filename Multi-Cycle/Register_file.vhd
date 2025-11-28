@@ -56,7 +56,7 @@ architecture behavioral of Register_file is
 );
 begin 
     -- Synchronous write process (on rising edge of clk) 
-    process(clk)
+    process(clk, reset)
     begin
         if reset = '0' then 
             reg <= (others => (others => '0')); -- Reset all registers to 0 	 

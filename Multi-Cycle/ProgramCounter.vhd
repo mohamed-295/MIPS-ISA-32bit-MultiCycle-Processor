@@ -13,7 +13,7 @@ architecture behavioral of ProgramCounter is
 
 begin
 	
-	process(clk)
+	process(clk, reset)
 	begin
 		if reset = '0' then
 			output <= (others =>'0');

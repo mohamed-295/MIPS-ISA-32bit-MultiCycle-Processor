@@ -14,7 +14,7 @@ architecture behavioral of Instruction_register is
 	signal ir : std_logic_vector (31 downto 0);
 begin
 	
-	process(clk)
+	process(clk,reset)
 	begin
 		if reset = '0' then
 			ir<= (others =>'0');

@@ -58,7 +58,7 @@ architecture behavioral of Memory is
 
 begin
 	-- Write process: stores each byte of the word 
-	process(clk,reset)
+	process(clk)
 	begin
 		--if reset = '0' then
 			--memory <= (others => (others => '0'));
