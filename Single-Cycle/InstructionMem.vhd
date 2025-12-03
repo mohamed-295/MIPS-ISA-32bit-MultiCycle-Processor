@@ -24,7 +24,7 @@ architecture rom of InstructionMem is
         3  => x"01095022",  -- sub  $t2, $t0, $t1
         4  => x"01095024",  -- and  $t2, $t0, $t1
         5  => x"01095025",  -- or   $t2, $t0, $t1
-        6  => x"0004A800",   -- sll $t2, $t1, 2
+        6  => x"00095080",   -- sll $t2, $t1, 2
 
         -- Memory instructions
         7  => x"AD0A0000",  -- sw   $t2, 0($t0)

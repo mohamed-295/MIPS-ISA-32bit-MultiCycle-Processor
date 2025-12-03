@@ -2,6 +2,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity Top_Level is
 	
@@ -64,7 +65,8 @@ end component;
 component ALU 
 	port(
 		A: in std_logic_vector(31 downto 0);
-	   	B: in std_logic_vector(31 downto 0);	  
+	   	B: in std_logic_vector(31 downto 0);
+		shamt   : in integer range 0 to 31;          -- shift amount for sll
 		control: in std_logic_vector(2 downto 0);
 		result: out std_logic_vector(31 downto 0);
 		zero: out std_logic
@@ -167,11 +169,19 @@ signal Mux1_out : std_logic_vector(4 downto 0);
 signal ALUControltoALU : std_logic_vector(2 downto 0);
 
 
-signal ALUOp : std_logic_vector(1 downto 0);
+signal ALUOp : std_logic_vector(1 downto 0); 
 
-  begin
+signal shamt_int : integer range 0 to 31;
+
+
+
+
+
+begin			  
+	
+	  shamt_int <= to_integer(unsigned(InstructionMemOut(10 downto 6)));
 	  ANDtoMUX <= ZeroCarry and Branch;
-      JumpAddress(31 downto 28) <= PC_out(31 downto 28);
+      JumpAddress(31 downto 28) <= PC_out(31 downto 28);	
 	  PC_in <= JumpAddress
        when Jump = '1'
        else Add2_out
@@ -180,7 +190,7 @@ signal ALUOp : std_logic_vector(1 downto 0);
 
 	  
 	  
-	  A_Logic_Unit : ALU                  port map(ReadData1_To_ALU, Mux2ToAlu, ALUControltoALU, AluResult, ZeroCarry);
+	  A_Logic_Unit : ALU                  port map(ReadData1_To_ALU, Mux2ToAlu,shamt_int, ALUControltoALU, AluResult, ZeroCarry);
       ALU_CONTROL  : ALUControl           port map(ALUOp, InstructionMemOut(5 downto 0), ALUControltoALU);	  
 	  
       CTRL_UNIT    : MainControl          port map(InstructionMemOut(31 downto 26),RegDst,Jump,Branch,MemRead,MemtoReg,MemWrite ,ALUSrc, RegWrite,ALUOp );		   
