@@ -21,8 +21,9 @@ entity ID_EX_REGISTER is
         read_data1: in STD_LOGIC_VECTOR (INST_SIZE-1 downto 0); 
 	read_data2: in	STD_LOGIC_VECTOR (INST_SIZE-1 downto 0);	
 	
-	num_out: in STD_LOGIC_VECTOR (INST_SIZE-1 downto 0); -- instruction[15-0] after sign extend    
-	
+	num_out: in STD_LOGIC_VECTOR (INST_SIZE-1 downto 0); -- instruction[15-0] after sign extend  
+
+	rs: in	STD_LOGIC_VECTOR (ADDR_SIZE-1 downto 0); --instruction[25-21]
 	rt: in	STD_LOGIC_VECTOR (ADDR_SIZE-1 downto 0); --instruction[20-16]
 	rd: in	STD_LOGIC_VECTOR (ADDR_SIZE-1 downto 0); --instruction[15-11]   
 	
@@ -39,6 +40,7 @@ entity ID_EX_REGISTER is
 	
 	num_out_at_EX: out STD_LOGIC_VECTOR (INST_SIZE-1 downto 0); -- instruction[15-0] after sign extend
 	
+        rs_out: out	STD_LOGIC_VECTOR (ADDR_SIZE-1 downto 0); --instruction[25-21]
 	rt_out: out	STD_LOGIC_VECTOR (ADDR_SIZE-1 downto 0); --instruction[20-16]
 	rd_out: out	STD_LOGIC_VECTOR (ADDR_SIZE-1 downto 0) --instruction[15-11] 
 	
@@ -55,6 +57,7 @@ begin
             read_data1_out   <= (others => '0');
             read_data2_out   <= (others => '0');
             num_out_at_EX    <= (others => '0');
+            rs_out           <= (others => '0');
             rt_out           <= (others => '0');
             rd_out           <= (others => '0');
             WB_out           <= (others => '0');  -- 2 bits
@@ -67,6 +70,7 @@ begin
             read_data1_out   <= read_data1;
             read_data2_out   <= read_data2;
             num_out_at_EX    <= num_out;
+            rs_out           <= rs;
             rt_out           <= rt;
             rd_out           <= rd;
             WB_out           <= WB_in;
